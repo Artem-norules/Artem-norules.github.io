@@ -167,14 +167,19 @@
 </section>
 
 <section id="skills" class="py-16 sm:py-32 relative z-10 bg-cyberBlack/40">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-        <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-20 reveal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative">
+        <!-- SVG lines: hub under title → each skill card (desktop) -->
+        <svg id="skillsLines" class="hidden lg:block absolute inset-0 w-full h-full pointer-events-none z-[1]" aria-hidden="true"></svg>
+
+        <div class="text-center max-w-3xl mx-auto mb-20 sm:mb-28 relative z-10 reveal">
             <h2 class="font-heading font-black text-2xl sm:text-5xl mb-3 sm:mb-4">ЧТО Я <span class="text-cyber-gradient">УМЕЮ</span></h2>
             <p class="text-gray-400 font-light text-sm sm:text-base">Проектирование и развёртывание программных модулей различного уровня сложности</p>
+            <div id="skillsHub" class="mx-auto mt-8 w-2.5 h-2.5 rounded-full bg-white shadow-[0_0_12px_rgba(255,255,255,0.6)] hidden lg:block"></div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
-            <div class="glass-panel card-glow p-6 sm:p-8 rounded-2xl relative group flex flex-col justify-between" onmousemove="updateGlow(event, this)">
+        <div id="skillsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 relative z-10">
+            <div class="skill-card glass-panel card-glow p-6 sm:p-8 rounded-2xl relative group flex flex-col justify-between" onmousemove="updateGlow(event, this)">
+                <div class="skill-card-anchor absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-white/80 shadow-[0_0_8px_rgba(255,255,255,0.5)] hidden lg:block"></div>
                 <div>
                     <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-purpleDark/20 border border-purpleLight/30 flex items-center justify-center text-xl sm:text-2xl text-purpleLight mb-4 sm:mb-6"><i class="fab fa-python"></i></div>
                     <h3 class="font-heading font-bold text-base sm:text-lg mb-2 sm:mb-3">Python Скрипты</h3>
@@ -182,7 +187,8 @@
                 </div>
             </div>
 
-            <div class="glass-panel card-glow p-6 sm:p-8 rounded-2xl relative group flex flex-col justify-between" onmousemove="updateGlow(event, this)">
+            <div class="skill-card glass-panel card-glow p-6 sm:p-8 rounded-2xl relative group flex flex-col justify-between" onmousemove="updateGlow(event, this)">
+                <div class="skill-card-anchor absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-white/80 shadow-[0_0_8px_rgba(255,255,255,0.5)] hidden lg:block"></div>
                 <div>
                     <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-purpleDark/20 border border-purpleLight/30 flex items-center justify-center text-xl sm:text-2xl text-purpleLight mb-4 sm:mb-6"><i class="fas fa-cubes"></i></div>
                     <h3 class="font-heading font-bold text-base sm:text-lg mb-2 sm:mb-3">Unity & C# Game Dev</h3>
@@ -190,7 +196,8 @@
                 </div>
             </div>
 
-            <div class="glass-panel card-glow p-6 sm:p-8 rounded-2xl relative group flex flex-col justify-between" onmousemove="updateGlow(event, this)">
+            <div class="skill-card glass-panel card-glow p-6 sm:p-8 rounded-2xl relative group flex flex-col justify-between" onmousemove="updateGlow(event, this)">
+                <div class="skill-card-anchor absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-white/80 shadow-[0_0_8px_rgba(255,255,255,0.5)] hidden lg:block"></div>
                 <div>
                     <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-purpleDark/20 border border-purpleLight/30 flex items-center justify-center text-sm font-heading font-black text-purpleLight mb-4 sm:mb-6">C++</div>
                     <h3 class="font-heading font-bold text-base sm:text-lg mb-2 sm:mb-3">Разработка на C++</h3>
@@ -198,11 +205,47 @@
                 </div>
             </div>
 
-            <div class="glass-panel card-glow p-6 sm:p-8 rounded-2xl relative group flex flex-col justify-between" onmousemove="updateGlow(event, this)">
+            <div class="skill-card glass-panel card-glow p-6 sm:p-8 rounded-2xl relative group flex flex-col justify-between" onmousemove="updateGlow(event, this)">
+                <div class="skill-card-anchor absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-white/80 shadow-[0_0_8px_rgba(255,255,255,0.5)] hidden lg:block"></div>
                 <div>
                     <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-purpleDark/20 border border-purpleLight/30 flex items-center justify-center text-xl sm:text-2xl text-purpleLight mb-4 sm:mb-6"><i class="fas fa-brain"></i></div>
                     <h3 class="font-heading font-bold text-base sm:text-lg mb-2 sm:mb-3">AI Agent Integrations</h3>
                     <p class="text-gray-400 font-light text-xs sm:text-sm leading-relaxed">Интеграция сторонних нейросетевых API моделей, создание умных ассистентов нового поколения.</p>
+                </div>
+            </div>
+            <div class="skill-card glass-panel card-glow p-6 sm:p-8 rounded-2xl relative group flex flex-col justify-between" onmousemove="updateGlow(event, this)">
+                <div class="skill-card-anchor absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-white/80 shadow-[0_0_8px_rgba(255,255,255,0.5)] hidden lg:block"></div>
+                <div>
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-purpleDark/20 border border-purpleLight/30 flex items-center justify-center text-xl sm:text-2xl text-purpleLight mb-4 sm:mb-6"><i class="fab fa-windows"></i></div>
+                    <h3 class="font-heading font-bold text-base sm:text-lg mb-2 sm:mb-3">Windows-приложения</h3>
+                    <p class="text-gray-400 font-light text-xs sm:text-sm leading-relaxed">Разработка десктопных приложений под Windows: утилиты, интерфейсы, автоматизация и упаковка в удобный установщик.</p>
+                </div>
+            </div>
+
+            <div class="skill-card glass-panel card-glow p-6 sm:p-8 rounded-2xl relative group flex flex-col justify-between" onmousemove="updateGlow(event, this)">
+                <div class="skill-card-anchor absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-white/80 shadow-[0_0_8px_rgba(255,255,255,0.5)] hidden lg:block"></div>
+                <div>
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-purpleDark/20 border border-purpleLight/30 flex items-center justify-center text-xl sm:text-2xl text-purpleLight mb-4 sm:mb-6"><i class="fab fa-android"></i></div>
+                    <h3 class="font-heading font-bold text-base sm:text-lg mb-2 sm:mb-3">Android-приложения</h3>
+                    <p class="text-gray-400 font-light text-xs sm:text-sm leading-relaxed">Создание мобильных приложений под Android: экраны, логика, работа с API и сборка готового APK/AAB.</p>
+                </div>
+            </div>
+
+            <div class="skill-card glass-panel card-glow p-6 sm:p-8 rounded-2xl relative group flex flex-col justify-between" onmousemove="updateGlow(event, this)">
+                <div class="skill-card-anchor absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-white/80 shadow-[0_0_8px_rgba(255,255,255,0.5)] hidden lg:block"></div>
+                <div>
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-purpleDark/20 border border-purpleLight/30 flex items-center justify-center text-xl sm:text-2xl text-purpleLight mb-4 sm:mb-6"><i class="fas fa-globe"></i></div>
+                    <h3 class="font-heading font-bold text-base sm:text-lg mb-2 sm:mb-3">Сайты и хостинг</h3>
+                    <p class="text-gray-400 font-light text-xs sm:text-sm leading-relaxed">Вёрстка и разработка сайтов, подключение домена, настройка хостинга, SSL и публикация проекта в сеть.</p>
+                </div>
+            </div>
+
+            <div class="skill-card glass-panel card-glow p-6 sm:p-8 rounded-2xl relative group flex flex-col justify-between" onmousemove="updateGlow(event, this)">
+                <div class="skill-card-anchor absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-white/80 shadow-[0_0_8px_rgba(255,255,255,0.5)] hidden lg:block"></div>
+                <div>
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-purpleDark/20 border border-purpleLight/30 flex items-center justify-center text-xl sm:text-2xl text-purpleLight mb-4 sm:mb-6"><i class="fas fa-code-branch"></i></div>
+                    <h3 class="font-heading font-bold text-base sm:text-lg mb-2 sm:mb-3">Доработка кода</h3>
+                    <p class="text-gray-400 font-light text-xs sm:text-sm leading-relaxed">Разбор чужого или старого проекта: исправление багов, рефакторинг, оптимизация и добавление нового функционала.</p>
                 </div>
             </div>
         </div>

@@ -294,3 +294,62 @@ document.addEventListener('DOMContentLoaded', () => setTimeout(revealOnScroll, 2
     setCanvasSize();
     animate();
 })();
+
+// Skills section: lines from hub under title to each card (desktop)
+(function initSkillsLines() {
+    const svg = document.getElementById('skillsLines');
+    const hub = document.getElementById('skillsHub');
+    const grid = document.getElementById('skillsGrid');
+    if (!svg || !hub || !grid) return;
+
+    function draw() {
+        if (window.innerWidth < 1024) {
+            svg.innerHTML = '';
+            return;
+        }
+
+        const wrap = svg.parentElement;
+        const wrapRect = wrap.getBoundingClientRect();
+        const hubRect = hub.getBoundingClientRect();
+        const cards = grid.querySelectorAll('.skill-card');
+
+        const w = wrap.clientWidth;
+        const h = wrap.clientHeight;
+        svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+        svg.setAttribute('width', w);
+        svg.setAttribute('height', h);
+
+        const x1 = hubRect.left + hubRect.width / 2 - wrapRect.left;
+        const y1 = hubRect.top + hubRect.height / 2 - wrapRect.top;
+
+        let html = '';
+        cards.forEach((card) => {
+            const anchor = card.querySelector('.skill-card-anchor') || card;
+            const r = anchor.getBoundingClientRect();
+            const x2 = r.left + r.width / 2 - wrapRect.left;
+            const y2 = r.top + r.height / 2 - wrapRect.top;
+            const cy = y1 + (y2 - y1) * 0.45;
+
+            html += `<path d="M ${x1.toFixed(1)} ${y1.toFixed(1)} C ${x1.toFixed(1)} ${cy.toFixed(1)}, ${x2.toFixed(1)} ${cy.toFixed(1)}, ${x2.toFixed(1)} ${y2.toFixed(1)}" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="1.5" stroke-linecap="round"/>`;
+        });
+
+        svg.innerHTML = html;
+    }
+
+    let ticking = false;
+    function requestDraw() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+            draw();
+            ticking = false;
+        });
+    }
+
+    window.addEventListener('resize', requestDraw, { passive: true });
+    window.addEventListener('scroll', requestDraw, { passive: true });
+    document.addEventListener('DOMContentLoaded', () => setTimeout(draw, 100));
+    // fonts / layout settle
+    setTimeout(draw, 300);
+    setTimeout(draw, 800);
+})();
