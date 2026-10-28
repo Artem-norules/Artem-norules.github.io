@@ -1,0 +1,49 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# Logs & temp
+*.log
+*.tmp
+*.temp
+.cache/
+
+# Archives (local builds)
+*.7z
+*.zip
+*.rar
+*.tar
+*.tar.gz
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Node (if added later)
+node_modules/
+npm-debug.log*
+yarn-error.log*
+dist/
+build/
+
+# Python (if scripts added)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Misc
+*.bak
+*.old
+.local/

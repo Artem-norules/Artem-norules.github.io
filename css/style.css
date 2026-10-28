@@ -1,0 +1,246 @@
+/* ===== NORULES Core Styles ===== */
+body {
+    background-color: #0b090c;
+    color: #ffffff;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    overflow-x: hidden;
+}
+
+.shiny-text {
+    background: linear-gradient(90deg, #ffffff, #785bda, #6244c4, #ffffff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 4s linear infinite;
+}
+
+@keyframes shine {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+.bg-cyber-gradient {
+    background: linear-gradient(135deg, #4b31a2 0%, #6244c4 50%, #785bda 100%);
+}
+
+.text-cyber-gradient {
+    background: linear-gradient(135deg, #785bda 0%, #6244c4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Improved mobile highlight instead of missing hover */
+@media (max-width: 1024px) {
+    .glass-panel {
+        border-color: rgba(120, 91, 218, 0.2);
+        background: rgba(255, 255, 255, 0.03);
+    }
+}
+
+@media (min-width: 1025px) {
+    .glass-panel:hover {
+        border-color: rgba(120, 91, 218, 0.4);
+        box-shadow: 0 0 30px rgba(75, 49, 162, 0.2);
+        transform: translateY(-4px) scale(1.01);
+    }
+}
+
+.card-glow {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(800px circle at var(--x, 0px) var(--y, 0px), rgba(120, 91, 218, 0.15), transparent 40%);
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card-glow:hover::before {
+    opacity: 1;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.floating {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0b090c;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4b31a2;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #785bda;
+}
+
+/* ===== Avatar 3D tilt (desktop only) =====
+   Whole card (border + image) tilts together.
+   No overflow:hidden on the transformed node → no diagonal AA seam.
+   Rounding is on the img itself (matching parent radius). */
+.avatar-container {
+    perspective: 900px;
+}
+
+.avatar-inner {
+    will-change: transform;
+    transition: transform 0.12s ease-out;
+    transform-origin: center center;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    /* avoid overflow:hidden here — it causes the diagonal line under 3D */
+}
+
+.avatar-inner .avatar-img,
+.avatar-inner img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    /* image carries the rounding so corners stay clean without overflow:hidden */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+@media (max-width: 1024px) {
+    .avatar-inner {
+        transform: none !important;
+        transition: none;
+    }
+}
+
+/* ===== 404 Glitch ===== */
+.glitch {
+    font-weight: 900;
+    position: relative;
+    text-shadow: 0.05em 0 0 rgba(120, 91, 218, 0.75),
+                 -0.025em -0.05em 0 rgba(75, 49, 162, 0.75),
+                 0.025em 0.05em 0 rgba(98, 68, 196, 0.75);
+    animation: glitch 500ms infinite;
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 0.05em 0 0 rgba(120, 91, 218, 0.75),
+                     -0.025em -0.05em 0 rgba(75, 49, 162, 0.75),
+                     0.025em 0.05em 0 rgba(98, 68, 196, 0.75);
+    }
+    14% {
+        text-shadow: 0.05em 0 0 rgba(120, 91, 218, 0.75),
+                     -0.025em -0.05em 0 rgba(75, 49, 162, 0.75),
+                     0.025em 0.05em 0 rgba(98, 68, 196, 0.75);
+    }
+    15% {
+        text-shadow: -0.05em -0.025em 0 rgba(120, 91, 218, 0.75),
+                     0.025em 0.025em 0 rgba(75, 49, 162, 0.75),
+                     -0.05em -0.05em 0 rgba(98, 68, 196, 0.75);
+    }
+    49% {
+        text-shadow: -0.05em -0.025em 0 rgba(120, 91, 218, 0.75),
+                     0.025em 0.025em 0 rgba(75, 49, 162, 0.75),
+                     -0.05em -0.05em 0 rgba(98, 68, 196, 0.75);
+    }
+    50% {
+        text-shadow: 0.025em 0.05em 0 rgba(120, 91, 218, 0.75),
+                     0.05em 0 0 rgba(75, 49, 162, 0.75),
+                     0 -0.05em 0 rgba(98, 68, 196, 0.75);
+    }
+    99% {
+        text-shadow: 0.025em 0.05em 0 rgba(120, 91, 218, 0.75),
+                     0.05em 0 0 rgba(75, 49, 162, 0.75),
+                     0 -0.05em 0 rgba(98, 68, 196, 0.75);
+    }
+    100% {
+        text-shadow: -0.025em 0 0 rgba(120, 91, 218, 0.75),
+                     -0.025em -0.025em 0 rgba(75, 49, 162, 0.75),
+                     -0.025em -0.05em 0 rgba(98, 68, 196, 0.75);
+    }
+}
+
+/* ===== Mobile optimizations ===== */
+@media (max-width: 768px) {
+    /* Reduce motion for performance */
+    .floating {
+        animation-duration: 6s;
+    }
+
+    /* Safer tap targets */
+    a, button {
+        -webkit-tap-highlight-color: rgba(120, 91, 218, 0.2);
+    }
+
+    /* Prevent horizontal overflow */
+    body, html {
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+
+    /* Slightly larger touch-friendly cards */
+    .glass-panel {
+        border-radius: 1rem;
+    }
+}
+
+/* Reduce particles visual load on very small screens */
+@media (max-width: 480px) {
+    #particleCanvas {
+        opacity: 0.6;
+    }
+}
+
+/* Prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .shiny-text,
+    .floating,
+    .glitch,
+    .reveal {
+        animation: none !important;
+        transition: none !important;
+    }
+    .avatar-inner {
+        transform: none !important;
+    }
+}

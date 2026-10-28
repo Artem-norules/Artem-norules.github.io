@@ -2,7 +2,7 @@
 <html lang="ru" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Norules | My Projects</title>
     <link rel="icon" href="logo.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,31 +29,7 @@
             }
         }
     </script>
-    <style>
-        body { background-color: #0b090c; color: #ffffff; font-family: "Plus Jakarta Sans", sans-serif; overflow-x: hidden; }
-        .shiny-text { background: linear-gradient(90deg, #ffffff, #785bda, #6244c4, #ffffff); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 4s linear infinite; }
-        @keyframes shine { 0% { background-position: 0% center; } 100% { background-position: 200% center; } }
-        .bg-cyber-gradient { background: linear-gradient(135deg, #4b31a2 0%, #6244c4 50%, #785bda 100%); }
-        .text-cyber-gradient { background: linear-gradient(135deg, #785bda 0%, #6244c4 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .glass-panel { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-
-        @media (max-width: 1024px) {
-            .glass-panel { border-color: rgba(120, 91, 218, 0.2); background: rgba(255, 255, 255, 0.03); }
-        }
-        @media (min-width: 1025px) {
-            .glass-panel:hover { border-color: rgba(120, 91, 218, 0.4); box-shadow: 0 0 40px rgba(75, 49, 162, 0.2); transform: translateY(-6px); }
-        }
-
-        .card-glow { position: relative; overflow: hidden; }
-        .card-glow::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(800px circle at var(--x, 0px) var(--y, 0px), rgba(120, 91, 218, 0.15), transparent 40%); z-index: 1; pointer-events: none; opacity: 0; transition: opacity 0.3s ease; }
-        .card-glow:hover::before { opacity: 1; }
-        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0b090c; }
-        ::-webkit-scrollbar-thumb { background: #4b31a2; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #785bda; }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -68,7 +44,7 @@
     <div>
         <div class="flex justify-between items-center border-b border-white/10 pb-6 mb-6">
             <span class="font-heading font-bold text-sm tracking-widest text-white">МАРШРУТИЗАЦИЯ</span>
-            <button id="closeMenuBtn" class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/10 hover:border-purpleLight/50 text-gray-400 hover:text-white transition-all">
+            <button id="closeMenuBtn" class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/10 hover:border-purpleLight/50 text-gray-400 hover:text-white transition-all" aria-label="Закрыть меню">
                 <i class="fas fa-times"></i>
             </button>
         </div>
@@ -83,7 +59,7 @@
     </div>
     <div class="space-y-4 border-t border-white/5 pt-6">
         <div class="sm:hidden">
-            <a href="https://t.me/shuaia9w" target="_blank" class="w-full block text-center text-[11px] font-heading font-medium border border-white/10 px-4 py-3 rounded-xl text-gray-300">
+            <a href="https://t.me/shuaia9w" target="_blank" rel="noopener noreferrer" class="w-full block text-center text-[11px] font-heading font-medium border border-white/10 px-4 py-3 rounded-xl text-gray-300">
                 Связаться
             </a>
         </div>
@@ -100,10 +76,10 @@
         </a>
 
         <div class="flex items-center gap-4">
-            <a href="https://t.me/shuaia9w" target="_blank" class="hidden sm:inline-block text-xs font-heading font-medium border border-white/10 hover:border-purpleLight/50 px-5 py-2.5 rounded-full transition-all text-gray-300 hover:text-white backdrop-blur-md">
+            <a href="https://t.me/shuaia9w" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-block text-xs font-heading font-medium border border-white/10 hover:border-purpleLight/50 px-5 py-2.5 rounded-full transition-all text-gray-300 hover:text-white backdrop-blur-md">
                 Связаться
             </a>
-            <button id="menuBtn" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 hover:border-purpleLight/50 flex items-center justify-center text-gray-300 hover:text-white transition-all backdrop-blur-md">
+            <button id="menuBtn" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 hover:border-purpleLight/50 flex items-center justify-center text-gray-300 hover:text-white transition-all backdrop-blur-md" aria-label="Открыть меню">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
@@ -134,8 +110,8 @@
             <div class="glass-panel card-glow rounded-2xl overflow-hidden flex flex-col justify-between group" onmousemove="updateGlow(event, this)">
                 <div>
                     <div class="w-full h-44 sm:h-56 bg-cyberBlack/80 relative overflow-hidden border-b border-white/5 flex items-center justify-center">
-                        <div class="absolute inset-0 bg-cover bg-center opacity-15 blur-xl scale-110" style="background-image: url('nexis_preview.png');"></div>
-                        <img src="nexis_preview.png" alt="Nexis Ai Preview" class="relative z-10 max-h-full max-w-full object-contain p-4 opacity-80" onerror="this.parentNode.innerHTML='<div class=\'absolute inset-0 flex items-center justify-center text-gray-600 font-mono text-[10px]\'>[ NEXIS_PREVIEW.PNG MISSING ]</div>'">
+                        <div class="absolute inset-0 bg-cover bg-center opacity-15 blur-xl scale-110" style="background-image: url('media/projects/nexis_preview.png');"></div>
+                        <img src="media/projects/nexis_preview.png" alt="Nexis Ai Preview" class="relative z-10 max-h-full max-w-full object-contain p-4 opacity-80" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'absolute inset-0 flex items-center justify-center text-gray-600 font-mono text-[10px]\'>[ NEXIS_PREVIEW.PNG MISSING ]</div>'">
                         <div class="absolute top-3 right-3 bg-purpleDark/80 border border-purpleLight/40 backdrop-blur-md text-white text-[9px] font-heading font-bold py-1 px-2.5 rounded-full tracking-widest z-20">В РАЗРАБОТКЕ</div>
                     </div>
                     <div class="p-5 sm:p-8 space-y-3 sm:space-y-4">
@@ -150,8 +126,8 @@
             <div class="glass-panel card-glow rounded-2xl overflow-hidden flex flex-col justify-between group" onmousemove="updateGlow(event, this)">
                 <div>
                     <div class="w-full h-44 sm:h-56 bg-cyberBlack/80 relative overflow-hidden border-b border-white/5 flex items-center justify-center">
-                        <div class="absolute inset-0 bg-cover bg-center opacity-15 blur-xl scale-110" style="background-image: url('cortex_preview.jpg');"></div>
-                        <img src="cortex_preview.jpg" alt="Cortex Ai Preview" class="relative z-10 max-h-full max-w-full object-contain p-4 opacity-80" onerror="this.parentNode.innerHTML='<div class=\'absolute inset-0 flex items-center justify-center text-gray-600 font-mono text-[10px]\'>[ CORTEX_PREVIEW.JPG MISSING ]</div>'">
+                        <div class="absolute inset-0 bg-cover bg-center opacity-15 blur-xl scale-110" style="background-image: url('media/projects/cortex_preview.jpg');"></div>
+                        <img src="media/projects/cortex_preview.jpg" alt="Cortex Ai Preview" class="relative z-10 max-h-full max-w-full object-contain p-4 opacity-80" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'absolute inset-0 flex items-center justify-center text-gray-600 font-mono text-[10px]\'>[ CORTEX_PREVIEW.JPG MISSING ]</div>'">
                         <div class="absolute top-3 right-3 bg-green-500/20 border border-green-500/40 backdrop-blur-md text-green-400 text-[9px] font-heading font-bold py-1 px-2.5 rounded-full tracking-widest z-20">STABLE BUILD</div>
                     </div>
                     <div class="p-5 sm:p-8 space-y-3 sm:space-y-4">
@@ -178,7 +154,7 @@
                     <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 mb-4 sm:mb-6">
                         <div class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full flex-shrink-0 bg-cyberBlack border-2 border-purpleLight/40 p-1 shadow-[0_0_20px_rgba(120,91,218,0.3)]">
                             <div class="w-full h-full rounded-full overflow-hidden bg-cyberDark flex items-center justify-center">
-                                <img src="whitebot.jpg" alt="White Bot" class="w-full h-full object-cover" onerror="this.parentNode.innerHTML='<div class=\'text-gray-600 font-mono text-[9px]\'>NO_IMG</div>'">
+                                <img src="media/projects/whitebot.jpg" alt="White Bot" class="w-full h-full object-cover" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'text-gray-600 font-mono text-[9px]\'>NO_IMG</div>'">
                             </div>
                             <span class="absolute bottom-1 right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-[#0b090c]"></span>
                         </div>
@@ -199,7 +175,7 @@
 
                 <div class="flex items-center justify-between border-t border-white/5 mt-5 sm:mt-6 pt-4">
                     <span class="text-[9px] sm:text-[10px] font-mono text-gray-600">// @white_kmbot</span>
-                    <a href="https://t.me/white_kmbot" target="_blank" class="text-[11px] font-heading font-medium bg-purpleDark/20 border border-purpleLight/30 px-4 py-2.5 rounded-full text-purpleLight flex items-center gap-2">
+                    <a href="https://t.me/white_kmbot" target="_blank" rel="noopener noreferrer" class="text-[11px] font-heading font-medium bg-purpleDark/20 border border-purpleLight/30 px-4 py-2.5 rounded-full text-purpleLight flex items-center gap-2">
                         Показать <i class="fas fa-external-link-alt text-[9px]"></i>
                     </a>
                 </div>
@@ -210,7 +186,7 @@
                     <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 mb-4 sm:mb-6">
                         <div class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full flex-shrink-0 bg-cyberBlack border-2 border-purpleLight/40 p-1 shadow-[0_0_20px_rgba(120,91,218,0.3)]">
                             <div class="w-full h-full rounded-full overflow-hidden bg-cyberDark flex items-center justify-center">
-                                <img src="deepseek.jpg" alt="AI Hub Bot" class="w-full h-full object-cover" onerror="this.parentNode.innerHTML='<div class=\'text-gray-600 font-mono text-[9px]\'>NO_IMG</div>'">
+                                <img src="media/projects/deepseek.jpg" alt="AI Hub Bot" class="w-full h-full object-cover" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'text-gray-600 font-mono text-[9px]\'>NO_IMG</div>'">
                             </div>
                             <span class="absolute bottom-1 right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-[#0b090c]"></span>
                         </div>
@@ -231,7 +207,7 @@
 
                 <div class="flex items-center justify-between border-t border-white/5 mt-5 sm:mt-6 pt-4">
                     <span class="text-[9px] sm:text-[10px] font-mono text-gray-600">// @norulesdeepseek_bot</span>
-                    <a href="https://t.me/norulesdeepseek_bot" target="_blank" class="text-[11px] font-heading font-medium bg-purpleDark/20 border border-purpleLight/30 px-4 py-2.5 rounded-full text-purpleLight flex items-center gap-2">
+                    <a href="https://t.me/norulesdeepseek_bot" target="_blank" rel="noopener noreferrer" class="text-[11px] font-heading font-medium bg-purpleDark/20 border border-purpleLight/30 px-4 py-2.5 rounded-full text-purpleLight flex items-center gap-2">
                         Показать <i class="fas fa-external-link-alt text-[9px]"></i>
                     </a>
                 </div>
@@ -246,115 +222,6 @@
     </div>
 </footer>
 
-<script>
-    window.addEventListener('pageshow', () => {
-        const transitionEl = document.getElementById('pageTransition');
-        setTimeout(() => {
-            transitionEl.classList.remove('opacity-100');
-            transitionEl.classList.add('opacity-0');
-        }, 100);
-    });
-
-    document.querySelectorAll('a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            if (this.target === '_blank') return;
-            const href = this.getAttribute('href');
-            if (!href) return;
-
-            if (href.startsWith('#')) {
-                document.getElementById('sideMenu').classList.add('translate-x-full');
-                return;
-            }
-
-            try {
-                const targetUrl = new URL(this.href, window.location.href);
-                if (targetUrl.origin !== window.location.origin) return;
-
-                const currentPath = window.location.pathname.replace(/index\.html$/, '').replace(/\/$/, '');
-                const targetPath = targetUrl.pathname.replace(/index\.html$/, '').replace(/\/$/, '');
-
-                if (currentPath === targetPath && targetUrl.hash) {
-                    document.getElementById('sideMenu').classList.add('translate-x-full');
-                    return;
-                }
-
-                if (currentPath === targetPath && !targetUrl.hash) {
-                    document.getElementById('sideMenu').classList.add('translate-x-full');
-                    return;
-                }
-
-                e.preventDefault();
-                document.getElementById('sideMenu').classList.add('translate-x-full');
-                const transitionEl = document.getElementById('pageTransition');
-                transitionEl.classList.remove('opacity-0');
-                transitionEl.classList.add('opacity-100');
-
-                setTimeout(() => {
-                    window.location.href = this.href;
-                }, 500);
-            } catch (err) {}
-        });
-    });
-
-    const menuBtn = document.getElementById('menuBtn');
-    const closeMenuBtn = document.getElementById('closeMenuBtn');
-    const sideMenu = document.getElementById('sideMenu');
-    menuBtn.addEventListener('click', () => sideMenu.classList.remove('translate-x-full'));
-    closeMenuBtn.addEventListener('click', () => sideMenu.classList.add('translate-x-full'));
-
-    function updateGlow(e, element) {
-        if(window.innerWidth < 1025) return;
-        const rect = element.getBoundingClientRect();
-        element.style.setProperty('--x', `${e.clientX - rect.left}px`);
-        element.style.setProperty('--y', `${e.clientY - rect.top}px`);
-    }
-
-    window.addEventListener('scroll', () => {
-        const header = document.getElementById('header');
-        if (window.scrollY > 50) header.classList.add('py-3', 'bg-[#0b090c]/80', 'backdrop-blur-xl', 'border-b', 'border-white/5');
-        else header.classList.remove('py-3', 'bg-[#0b090c]/80', 'backdrop-blur-xl', 'border-b', 'border-white/5');
-    });
-
-    const revealElements = document.querySelectorAll('.reveal');
-    const revealOnScroll = () => {
-        for (let i = 0; i < revealElements.length; i++) {
-            if (revealElements[i].getBoundingClientRect().top < window.innerHeight - 80) revealElements[i].classList.add('active');
-        }
-    };
-    window.addEventListener('scroll', revealOnScroll);
-    document.addEventListener('DOMContentLoaded', () => setTimeout(revealOnScroll, 200));
-
-    const canvas = document.getElementById('particleCanvas');
-    const ctx = canvas.getContext('2d');
-    let particlesArray = [];
-    function setCanvasSize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
-    setCanvasSize();
-
-    class Particle {
-        constructor() {
-            this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height;
-            this.size = Math.random() * 1.5 + 0.5;
-            this.speedX = (Math.random() - 0.5) * 0.2; this.speedY = (Math.random() - 0.5) * 0.2;
-            this.alpha = Math.random() * 0.4 + 0.1;
-        }
-        update() {
-            this.x += this.speedX; this.y += this.speedY;
-            if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
-            if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
-        }
-        draw() {
-            ctx.fillStyle = `rgba(120, 91, 218, ${this.alpha})`;
-            ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
-        }
-    }
-    const particleCount = window.innerWidth < 768 ? 40 : 80;
-    for (let i = 0; i < particleCount; i++) particlesArray.push(new Particle());
-    function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (let i = 0; i < particlesArray.length; i++) { particlesArray[i].update(); particlesArray[i].draw(); }
-        requestAnimationFrame(animate);
-    }
-    animate();
-</script>
+<script src="js/main.js"></script>
 </body>
 </html>

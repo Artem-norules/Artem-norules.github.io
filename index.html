@@ -2,11 +2,11 @@
 <html lang="ru" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     
     <title>Norules (Артем Норулес) — Портфолио разработчика Python, Unity, C++</title>
     
-    <meta name="description" content="Norules (Артем Норулес / Artem Norules) — 16-летний Python-разработчик и Unity геймдев. Создаю Telegram-ботов, скрипты автоматизации, игры и AI-проекты. Портфолио, услуги и контакты.">
+    <meta name="description" content="Norules (Артем Норулес / Artem Norules) — 17-летний Python-разработчик и Unity геймдев. Создаю Telegram-ботов, скрипты автоматизации, игры и AI-проекты. Портфолио, услуги и контакты.">
     
     <meta name="keywords" content="Norules, Артем Норулес, Artem Norules, artem norules, норулес, python разработчик, unity геймдев, telegram бот python, c++ разработка, портфолио программиста, junior developer">
     
@@ -14,10 +14,11 @@
     <meta name="robots" content="index, follow">
     
     <meta property="og:title" content="Norules (Артем Норулес) — Портфолио разработчика">
-    <meta property="og:description" content="16-летний разработчик Python, Unity, C++ и ИИ. Смотрите проекты Norules.">
+    <meta property="og:description" content="17-летний разработчик Python, Unity, C++ и ИИ. Смотрите проекты Norules.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://artem-norules.github.io">
     <meta property="og:site_name" content="Norules">
+    
     <link rel="icon" href="logo.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,34 +44,7 @@
             }
         }
     </script>
-    <style>
-        body { background-color: #0b090c; color: #ffffff; font-family: "Plus Jakarta Sans", sans-serif; overflow-x: hidden; }
-        .shiny-text { background: linear-gradient(90deg, #ffffff, #785bda, #6244c4, #ffffff); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 4s linear infinite; }
-        @keyframes shine { 0% { background-position: 0% center; } 100% { background-position: 200% center; } }
-        .bg-cyber-gradient { background: linear-gradient(135deg, #4b31a2 0%, #6244c4 50%, #785bda 100%); }
-        .text-cyber-gradient { background: linear-gradient(135deg, #785bda 0%, #6244c4 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .glass-panel { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-
-        /* Улучшенная мобильная подсветка вместо отсутствующего hover */
-        @media (max-width: 1024px) {
-            .glass-panel { border-color: rgba(120, 91, 218, 0.2); background: rgba(255, 255, 255, 0.03); }
-        }
-        @media (min-width: 1025px) {
-            .glass-panel:hover { border-color: rgba(120, 91, 218, 0.4); box-shadow: 0 0 30px rgba(75, 49, 162, 0.2); transform: translateY(-4px) scale(1.01); }
-        }
-
-        .card-glow { position: relative; overflow: hidden; }
-        .card-glow::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(800px circle at var(--x, 0px) var(--y, 0px), rgba(120, 91, 218, 0.15), transparent 40%); z-index: 1; pointer-events: none; opacity: 0; transition: opacity 0.3s ease; }
-        .card-glow:hover::before { opacity: 1; }
-        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
-        .floating { animation: float 4s ease-in-out infinite; }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0b090c; }
-        ::-webkit-scrollbar-thumb { background: #4b31a2; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #785bda; }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -85,7 +59,7 @@
     <div>
         <div class="flex justify-between items-center border-b border-white/10 pb-6 mb-6">
             <span class="font-heading font-bold text-sm tracking-widest text-white">МАРШРУТИЗАЦИЯ</span>
-            <button id="closeMenuBtn" class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/10 hover:border-purpleLight/50 text-gray-400 hover:text-white transition-all">
+            <button id="closeMenuBtn" class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/10 hover:border-purpleLight/50 text-gray-400 hover:text-white transition-all" aria-label="Закрыть меню">
                 <i class="fas fa-times"></i>
             </button>
         </div>
@@ -113,10 +87,10 @@
 
     <div class="space-y-4 border-t border-white/5 pt-6">
         <div class="grid grid-cols-2 gap-3 lg:hidden">
-            <a href="https://t.me/shuaia9w" target="_blank" class="text-center text-[11px] font-heading font-medium border border-white/10 px-4 py-3 rounded-xl text-gray-300">
+            <a href="https://t.me/shuaia9w" target="_blank" rel="noopener noreferrer" class="text-center text-[11px] font-heading font-medium border border-white/10 px-4 py-3 rounded-xl text-gray-300">
                 Связаться
             </a>
-            <a href="https://www.donationalerts.com/r/norulesss" target="_blank" class="text-center text-[11px] font-heading font-medium bg-cyber-gradient px-4 py-3 rounded-xl text-white">
+            <a href="https://www.donationalerts.com/r/norulesss" target="_blank" rel="noopener noreferrer" class="text-center text-[11px] font-heading font-medium bg-cyber-gradient px-4 py-3 rounded-xl text-white">
                 Донат <i class="fas fa-coffee ml-0.5"></i>
             </a>
         </div>
@@ -141,13 +115,13 @@
         </nav>
 
         <div class="flex items-center gap-2 sm:gap-4">
-            <a href="https://t.me/shuaia9w" target="_blank" class="hidden lg:inline-block text-xs font-heading font-medium border border-white/10 hover:border-purpleLight/50 px-5 py-2.5 rounded-full transition-all text-gray-300 hover:text-white backdrop-blur-md">
+            <a href="https://t.me/shuaia9w" target="_blank" rel="noopener noreferrer" class="hidden lg:inline-block text-xs font-heading font-medium border border-white/10 hover:border-purpleLight/50 px-5 py-2.5 rounded-full transition-all text-gray-300 hover:text-white backdrop-blur-md">
                 Связаться
             </a>
-            <a href="https://www.donationalerts.com/r/norulesss" target="_blank" class="hidden lg:inline-block text-xs font-heading font-medium bg-cyber-gradient px-5 py-2.5 rounded-full text-white shadow-lg transition-all hover:scale-105">
+            <a href="https://www.donationalerts.com/r/norulesss" target="_blank" rel="noopener noreferrer" class="hidden lg:inline-block text-xs font-heading font-medium bg-cyber-gradient px-5 py-2.5 rounded-full text-white shadow-lg transition-all hover:scale-105">
                 Поддержать <i class="fas fa-coffee ml-1"></i>
             </a>
-            <button id="menuBtn" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 hover:border-purpleLight/50 flex items-center justify-center text-gray-300 hover:text-white transition-all backdrop-blur-md">
+            <button id="menuBtn" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 hover:border-purpleLight/50 flex items-center justify-center text-gray-300 hover:text-white transition-all backdrop-blur-md" aria-label="Открыть меню">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
@@ -157,24 +131,20 @@
 <section id="home" class="relative min-h-screen flex items-center pt-24 pb-12 z-10 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
         <div class="lg:col-span-7 space-y-6 sm:space-y-8 text-center lg:text-left z-10 order-2 lg:order-1">
-            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purpleDark/20 border border-purpleLight/30 text-purpleLight text-[10px] sm:text-xs font-heading font-medium uppercase tracking-wider floating">
-                <span class="w-2 h-2 rounded-full bg-purpleLight animate-pulse"></span> Next-Gen Developer Engine
-            </div>
-
             <h1 class="font-heading font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight tracking-tight">
                 Привет, я <br class="hidden lg:block"><span class="shiny-text">NORULES</span>
             </h1>
 
             <p class="text-gray-400 text-base sm:text-lg md:text-xl max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
-                Студент 1 курса, глубоко увлечённый архитектурой кода. Проектирую производительные скрипты, которые решают реальные задачи, и параллельно погружаюсь в геймдев-инженерию на базе экосистемы Unity.
+                Студент 2 курса, глубоко увлечённый архитектурой кода. Проектирую производительные скрипты, которые решают реальные задачи, и параллельно погружаюсь в геймдев-инженерию на базе экосистемы Unity.
             </p>
 
             <div class="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
-                <a href="https://github.com/Artem-norules" target="_blank" class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl glass-panel flex items-center justify-center text-lg sm:text-xl text-gray-400 hover:text-white"><i class="fab fa-github"></i></a>
-                <a href="https://t.me/NorulesHu" target="_blank" class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl glass-panel flex items-center justify-center text-lg sm:text-xl text-gray-400 hover:text-white"><i class="fab fa-telegram"></i></a>
-                <a href="https://www.youtube.com/@Norules_OfficialChannel" target="_blank" class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl glass-panel flex items-center justify-center text-lg sm:text-xl text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
-                <a href="https://steamcommunity.com/id/VirusTrojanVirusTrojan/" target="_blank" class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl glass-panel flex items-center justify-center text-lg sm:text-xl text-gray-400 hover:text-white"><i class="fab fa-steam"></i></a>
-                <a href="https://www.tiktok.com/@norulesss1?_t=ZP-8w4gm6m6OJK&_r=1" target="_blank" class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl glass-panel flex items-center justify-center text-lg sm:text-xl text-gray-400 hover:text-white"><i class="fab fa-tiktok"></i></a>
+                <a href="https://github.com/Artem-norules" target="_blank" rel="noopener noreferrer" class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl glass-panel flex items-center justify-center text-lg sm:text-xl text-gray-400 hover:text-white" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://t.me/NorulesHu" target="_blank" rel="noopener noreferrer" class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl glass-panel flex items-center justify-center text-lg sm:text-xl text-gray-400 hover:text-white" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                <a href="https://www.youtube.com/@Norules_OfficialChannel" target="_blank" rel="noopener noreferrer" class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl glass-panel flex items-center justify-center text-lg sm:text-xl text-gray-400 hover:text-white" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://steamcommunity.com/id/VirusTrojanVirusTrojan/" target="_blank" rel="noopener noreferrer" class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl glass-panel flex items-center justify-center text-lg sm:text-xl text-gray-400 hover:text-white" aria-label="Steam"><i class="fab fa-steam"></i></a>
+                <a href="https://www.tiktok.com/@norulesss1?_t=ZP-8w4gm6m6OJK&_r=1" target="_blank" rel="noopener noreferrer" class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl glass-panel flex items-center justify-center text-lg sm:text-xl text-gray-400 hover:text-white" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
             </div>
 
             <div class="pt-4">
@@ -184,14 +154,12 @@
             </div>
         </div>
 
+        <!-- Avatar with dynamic 3D tilt (desktop only) — whole card tilts -->
         <div class="lg:col-span-5 flex justify-center lg:justify-end z-10 order-1 lg:order-2 pt-6 lg:pt-0">
-            <div class="relative w-48 h-48 xs:w-64 xs:h-64 sm:w-80 sm:h-80 md:w-85 md:h-85 group">
-                <div class="absolute inset-0 rounded-3xl bg-gradient-to-tr from-purpleDark via-purpleMid to-purpleLight opacity-30 blur-2xl"></div>
-                <div class="absolute -inset-1 sm:-inset-2 rounded-[1.5rem] sm:rounded-[2rem] border border-white/5 bg-gradient-to-tr from-purpleDark/20 to-transparent p-1.5 sm:p-2 backdrop-blur-3xl">
-                    <div class="w-full h-full rounded-[1.3rem] sm:rounded-[1.8rem] overflow-hidden border border-purpleLight/30 relative">
-                        <img src="logo.jpg" alt="Norules Avatar" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-purpleLight/20 to-transparent w-full h-12 -top-12 animate-[scan_3s_ease-in-out_infinite]"></div>
-                    </div>
+            <div class="avatar-container relative w-48 h-48 xs:w-64 xs:h-64 sm:w-80 sm:h-80 md:w-85 md:h-85">
+                <div class="absolute inset-0 rounded-3xl bg-gradient-to-tr from-purpleDark via-purpleMid to-purpleLight opacity-30 blur-2xl pointer-events-none"></div>
+                <div class="avatar-inner relative w-full h-full rounded-[1.5rem] sm:rounded-[2rem] border border-purpleLight/30 shadow-[0_0_40px_rgba(75,49,162,0.25)]">
+                    <img src="logo.jpg" alt="Norules Avatar" class="avatar-img w-full h-full object-cover block rounded-[1.4rem] sm:rounded-[1.9rem]" loading="eager" width="320" height="320">
                 </div>
             </div>
         </div>
@@ -248,12 +216,12 @@
                 <div class="text-purpleLight font-heading text-[10px] sm:text-xs uppercase tracking-wider">Системные Спецификации</div>
                 <h2 class="font-heading font-black text-xl sm:text-4xl">АРТЁМ КУЗЬМИН // <span class="text-cyber-gradient">NORULES</span></h2>
                 <div class="space-y-3 sm:space-y-4 text-gray-300 font-light leading-relaxed text-sm sm:text-base">
-                    <p>Привет! Мне 16 лет, я студент 1 курса. Мой путь в разработке начался около 2х лет назад, и каждый день я модифицирую и улучшаю свой стек технологий.</p>
+                    <p>Привет! Мне 17 лет, я студент 2 курса. Мой путь в разработке начался около 3х лет назад, и каждый день я модифицирую и улучшаю свой стек технологий.</p>
                     <p>Фокусируюсь на создании чистого, модульного кода, который решает реальные задачи. Параллельно погружаюсь в геймдев-инженерию на базе экосистемы Unity.</p>
                 </div>
                 <div class="grid grid-cols-2 gap-4 sm:gap-6 pt-4">
-                    <div class="border-l-2 border-purpleLight pl-3 sm:pl-4"><div class="font-heading font-bold text-base sm:text-xl text-white">16 лет</div><div class="text-[11px] text-gray-400">Возраст</div></div>
-                    <div class="border-l-2 border-purpleLight pl-3 sm:pl-4"><div class="font-heading font-bold text-base sm:text-xl text-white">1 курс</div><div class="text-[11px] text-gray-400">Академический статус</div></div>
+                    <div class="border-l-2 border-purpleLight pl-3 sm:pl-4"><div class="font-heading font-bold text-base sm:text-xl text-white">17 лет</div><div class="text-[11px] text-gray-400">Возраст</div></div>
+                    <div class="border-l-2 border-purpleLight pl-3 sm:pl-4"><div class="font-heading font-bold text-base sm:text-xl text-white">2 курс</div><div class="text-[11px] text-gray-400">Академический статус</div></div>
                 </div>
             </div>
             <div class="lg:col-span-5 bg-cyberBlack/60 rounded-2xl p-5 sm:p-6 border border-white/5 space-y-3 sm:space-y-4 reveal">
@@ -281,15 +249,15 @@
             <div class="glass-panel p-6 sm:p-8 rounded-2xl flex flex-col justify-between relative group" onmousemove="updateGlow(event, this)">
                 <div>
                     <div class="text-[10px] font-heading text-purpleLight uppercase tracking-wider mb-1">Light Core</div>
-                    <h3 class="font-heading font-bold text-lg sm:text-xl mb-3">Базовый Скрипт</h3>
-                    <div class="font-heading font-black text-xl sm:text-2xl text-white mb-4 sm:mb-6">Кастомный прайс</div>
+                    <h3 class="font-heading font-bold text-lg sm:text-xl mb-3">Базовый</h3>
+                    <div class="font-heading font-black text-xl sm:text-2xl text-white mb-4 sm:mb-6">от 490 ₽</div>
                     <ul class="space-y-2.5 text-xs sm:text-sm text-gray-400 mb-6 sm:mb-8">
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-purpleLight text-xs"></i> Простые Python утилиты</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-purpleLight text-xs"></i> Консультации по коду</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-purpleLight text-xs"></i> Базовая автоматизация</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-purpleLight text-xs"></i> Скрипт под ключ за 3 дня</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-purpleLight text-xs"></i> Базовая интеграция с 1 сервисом</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-purpleLight text-xs"></i> Гарантия работоспособности 1 месяц</li>
                     </ul>
                 </div>
-                <a href="https://t.me/NorulesHu" target="_blank" class="w-full text-center text-xs font-heading font-medium border border-white/10 py-3.5 rounded-xl text-gray-300 block bg-white/5 sm:bg-transparent">Выбрать Ноду</a>
+                <a href="https://t.me/NorulesHu" target="_blank" rel="noopener noreferrer" class="w-full text-center text-xs font-heading font-medium border border-white/10 py-3.5 rounded-xl text-gray-300 block bg-white/5 sm:bg-transparent">Быстрый старт</a>
             </div>
 
             <div class="glass-panel p-6 sm:p-8 rounded-2xl flex flex-col justify-between relative border-purpleLight/40 shadow-[0_0_40px_rgba(75,49,162,0.15)] md:-translate-y-4 group" onmousemove="updateGlow(event, this)">
@@ -299,26 +267,28 @@
                     <h3 class="font-heading font-bold text-lg sm:text-xl mb-3">Полная Автоматизация</h3>
                     <div class="font-heading font-black text-xl sm:text-2xl text-white mb-4 sm:mb-6">Обсуждаемо</div>
                     <ul class="space-y-2.5 text-xs sm:text-sm text-gray-400 mb-6 sm:mb-8">
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-purpleLight text-xs"></i> Многофункциональные боты</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-purpleLight text-xs"></i> Парсеры со сложной логикой</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-purpleLight text-xs"></i> Поддержка исходного кода</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-purpleLight text-xs"></i> Автоматизация рутины (экономия 20+ часов/мес)</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-purpleLight text-xs"></i> Интеграция с CRM / Базами данных</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-purpleLight text-xs"></i> Настройка под ваш бизнес-процесс</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-purpleLight text-xs"></i> Приоритетная поддержка</li>
                     </ul>
                 </div>
-                <a href="https://t.me/NorulesHu" target="_blank" class="w-full text-center text-xs font-heading font-medium bg-cyber-gradient py-3.5 rounded-xl text-white block shadow-lg">Подключить Модуль</a>
+                <a href="https://t.me/NorulesHu" target="_blank" rel="noopener noreferrer" class="w-full text-center text-xs font-heading font-medium bg-cyber-gradient py-3.5 rounded-xl text-white block shadow-lg">Начать проект</a>
             </div>
 
             <div class="glass-panel p-6 sm:p-8 rounded-2xl flex flex-col justify-between relative group" onmousemove="updateGlow(event, this)">
                 <div>
                     <div class="text-[10px] font-heading text-purpleLight uppercase tracking-wider mb-1">Custom Space</div>
-                    <h3 class="font-heading font-bold text-lg sm:text-xl mb-3">Индивидуальный Scope</h3>
+                    <h3 class="font-heading font-bold text-lg sm:text-xl mb-3">Индивидуальный</h3>
                     <div class="font-heading font-black text-xl sm:text-2xl text-white mb-4 sm:mb-6">По ТЗ</div>
                     <ul class="space-y-2.5 text-xs sm:text-sm text-gray-400 mb-6 sm:mb-8">
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-purpleLight text-xs"></i> Сложные архитектурные решения</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-purpleLight text-xs"></i> Игры "под ключ" (MVP)</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-purpleLight text-xs"></i> Интеграция AI систем</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-purpleLight text-xs"></i> Разработка с нуля (Web / App / Bot)</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-purpleLight text-xs"></i> Интеграция AI (ChatGPT / LLM)</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-purpleLight text-xs"></i> Персональный менеджер проекта</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-purpleLight text-xs"></i> NDA и закрытый код</li>
                     </ul>
                 </div>
-                <a href="https://t.me/NorulesHu" target="_blank" class="w-full text-center text-xs font-heading font-medium border border-white/10 py-3.5 rounded-xl text-gray-300 block bg-white/5 sm:bg-transparent">Связаться</a>
+                <a href="https://t.me/NorulesHu" target="_blank" rel="noopener noreferrer" class="w-full text-center text-xs font-heading font-medium border border-white/10 py-3.5 rounded-xl text-gray-300 block bg-white/5 sm:bg-transparent">Связаться</a>
             </div>
         </div>
     </div>
@@ -331,10 +301,10 @@
             Вы можете напрямую связаться со мной через цифровые хабы, следить за апдейтами на YouTube или поддержать разработку коином.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4 pt-2">
-            <a href="https://t.me/NorulesHu" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl glass-panel text-sm font-medium hover:text-purpleLight">
+            <a href="https://t.me/NorulesHu" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl glass-panel text-sm font-medium hover:text-purpleLight">
                 <i class="fab fa-telegram text-xl"></i> Telegram Канал
             </a>
-            <a href="https://www.donationalerts.com/r/norulesss" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl bg-purpleDark/20 border border-purpleLight/30 text-purpleLight text-sm font-medium transition-all">
+            <a href="https://www.donationalerts.com/r/norulesss" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl bg-purpleDark/20 border border-purpleLight/30 text-purpleLight text-sm font-medium transition-all">
                 <i class="fas fa-wallet text-xl"></i> DonationAlerts Node
             </a>
         </div>
@@ -347,112 +317,7 @@
     </div>
 </footer>
 
-<script>
-    window.addEventListener('pageshow', () => {
-        const transitionEl = document.getElementById('pageTransition');
-        setTimeout(() => {
-            transitionEl.classList.remove('opacity-100');
-            transitionEl.classList.add('opacity-0');
-        }, 100);
-    });
-
-    document.querySelectorAll('a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            if (this.target === '_blank') return;
-            const href = this.getAttribute('href');
-            if (!href) return;
-
-            if (href.startsWith('#')) {
-                document.getElementById('sideMenu').classList.add('translate-x-full');
-                return;
-            }
-
-            try {
-                const targetUrl = new URL(this.href, window.location.href);
-                if (targetUrl.origin !== window.location.origin) return;
-
-                const currentPath = window.location.pathname.replace(/index\.html$/, '').replace(/\/$/, '');
-                const targetPath = targetUrl.pathname.replace(/index\.html$/, '').replace(/\/$/, '');
-
-                if (currentPath === targetPath) {
-                    document.getElementById('sideMenu').classList.add('translate-x-full');
-                    return;
-                }
-
-                e.preventDefault();
-                document.getElementById('sideMenu').classList.add('translate-x-full');
-                const transitionEl = document.getElementById('pageTransition');
-                transitionEl.classList.remove('opacity-0');
-                transitionEl.classList.add('opacity-100');
-
-                setTimeout(() => {
-                    window.location.href = this.href;
-                }, 500);
-            } catch (err) {}
-        });
-    });
-
-    const menuBtn = document.getElementById('menuBtn');
-    const closeMenuBtn = document.getElementById('closeMenuBtn');
-    const sideMenu = document.getElementById('sideMenu');
-    menuBtn.addEventListener('click', () => sideMenu.classList.remove('translate-x-full'));
-    closeMenuBtn.addEventListener('click', () => sideMenu.classList.add('translate-x-full'));
-
-    function updateGlow(e, element) {
-        if(window.innerWidth < 1025) return; // Отключаем расчет на мобильных для экономии ресурсов
-        const rect = element.getBoundingClientRect();
-        element.style.setProperty('--x', `${e.clientX - rect.left}px`);
-        element.style.setProperty('--y', `${e.clientY - rect.top}px`);
-    }
-
-    window.addEventListener('scroll', () => {
-        const header = document.getElementById('header');
-        if (window.scrollY > 50) header.classList.add('py-3', 'bg-[#0b090c]/80', 'backdrop-blur-xl', 'border-b', 'border-white/5');
-        else header.classList.remove('py-3', 'bg-[#0b090c]/80', 'backdrop-blur-xl', 'border-b', 'border-white/5');
-    });
-
-    const revealElements = document.querySelectorAll('.reveal');
-    const revealOnScroll = () => {
-        for (let i = 0; i < revealElements.length; i++) {
-            if (revealElements[i].getBoundingClientRect().top < window.innerHeight - 80) revealElements[i].classList.add('active');
-        }
-    };
-    window.addEventListener('scroll', revealOnScroll);
-    document.addEventListener('DOMContentLoaded', () => setTimeout(revealOnScroll, 200));
-
-    const canvas = document.getElementById('particleCanvas');
-    const ctx = canvas.getContext('2d');
-    let particlesArray = [];
-    function setCanvasSize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
-    setCanvasSize();
-    window.addEventListener('resize', setCanvasSize);
-
-    class Particle {
-        constructor() {
-            this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height;
-            this.size = Math.random() * 1.5 + 0.5;
-            this.speedX = (Math.random() - 0.5) * 0.2; this.speedY = (Math.random() - 0.5) * 0.2;
-            this.alpha = Math.random() * 0.4 + 0.1;
-        }
-        update() {
-            this.x += this.speedX; this.y += this.speedY;
-            if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
-            if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
-        }
-        draw() {
-            ctx.fillStyle = `rgba(120, 91, 218, ${this.alpha})`;
-            ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
-        }
-    }
-    // Снижено количество частиц на мобилках для плавности
-    const particleCount = window.innerWidth < 768 ? 40 : 80;
-    for (let i = 0; i < particleCount; i++) particlesArray.push(new Particle());
-    function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (let i = 0; i < particlesArray.length; i++) { particlesArray[i].update(); particlesArray[i].draw(); }
-        requestAnimationFrame(animate);
-    }
-    animate();
-</script>
+<script src="js/main.js"></script>
+<script src="js/avatar.js"></script>
 </body>
 </html>
