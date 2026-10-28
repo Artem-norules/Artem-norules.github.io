@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://artem-norules.github.io/sitemap.xml
