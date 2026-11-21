@@ -254,6 +254,43 @@
             .cursor-snowflake { display: none !important; }
         }
 
+        /* ===== Santa / Moroz hero ===== */
+        .hero-santa {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 480px;
+        }
+        .hero-santa__img-wrap {
+            position: relative;
+            width: min(100%, 640px);
+            line-height: 0;
+            filter: drop-shadow(0 28px 56px rgba(75, 49, 162, 0.45));
+        }
+        .hero-santa__img {
+            width: 100%;
+            height: auto;
+            display: block;
+            animation: santaFloat 5s ease-in-out infinite;
+        }
+        @keyframes santaFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+        @media (max-width: 1023px) {
+            .hero-santa {
+                min-height: 0;
+                margin: 0.25rem auto 0.75rem;
+            }
+            .hero-santa__img-wrap {
+                width: min(92%, 420px);
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .hero-santa__img { animation: none !important; }
+        }
+
         @media (prefers-reduced-motion: reduce) {
             .shiny-text, .help-word__secret, .reveal { animation: none !important; transition: none !important; }
             *, *::before, *::after {
@@ -331,28 +368,35 @@
 <!-- ==================== HERO ==================== -->
 <section id="home" class="relative min-h-screen flex items-center pt-28 pb-12 z-10 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full">
-        <div class="max-w-3xl space-y-6 sm:space-y-8 text-center lg:text-left mx-auto lg:mx-0">
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.35fr] gap-4 lg:gap-6 items-center">
+            <div class="space-y-6 sm:space-y-8 text-center lg:text-left order-2 lg:order-1">
 
-            <h1 class="font-heading font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight tracking-tight">
-                Голосовой ассистент,<br class="hidden sm:block">
-                который <span class="shiny-text">действительно</span><br class="hidden sm:block">
-                <span class="help-word">по<span class="help-word__secret" title="mogged">мог</span>ает</span>
-            </h1>
+                <h1 class="font-heading font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight tracking-tight">
+                    Голосовой ассистент,<br class="hidden sm:block">
+                    который <span class="shiny-text">действительно</span><br class="hidden sm:block">
+                    <span class="help-word">по<span class="help-word__secret" title="mogged">мог</span>ает</span>
+                </h1>
 
-            <p class="text-gray-400 text-base sm:text-lg md:text-xl max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
-                Десктопный ассистент для Windows: говорите голосом, пишите в чате, собирайте сценарии команд и расширяйте возможности плагинами. При необходимости управляйте компьютером с телефона.
-            </p>
+                <p class="text-gray-400 text-base sm:text-lg md:text-xl max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
+                    Десктопный ассистент для Windows: говорите голосом, пишите в чате, собирайте сценарии команд и расширяйте возможности плагинами. При необходимости управляйте компьютером с телефона.
+                </p>
 
-            <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
-                <a href="https://t.me/norules_nexisaibot" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex justify-center items-center gap-3 px-8 py-4 rounded-xl bg-cyber-gradient font-heading font-medium text-sm transition-all hover:scale-105 group">
-                    Начать со скидкой 25% <i class="fas fa-arrow-right text-xs transform group-hover:translate-x-1 transition-transform"></i>
-                </a>
-                <a href="#screenshots" class="w-full sm:w-auto inline-flex justify-center items-center gap-3 px-8 py-4 rounded-xl glass-panel font-heading font-medium text-sm transition-all hover:scale-105 hover:text-purpleLight group">
-                    Посмотреть интерфейс <i class="fas fa-desktop text-xs transform group-hover:scale-110 transition-transform"></i>
-                </a>
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
+                    <a href="https://t.me/norules_nexisaibot" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex justify-center items-center gap-3 px-8 py-4 rounded-xl bg-cyber-gradient font-heading font-medium text-sm transition-all hover:scale-105 group">
+                        Начать со скидкой 25% <i class="fas fa-arrow-right text-xs transform group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="#screenshots" class="w-full sm:w-auto inline-flex justify-center items-center gap-3 px-8 py-4 rounded-xl glass-panel font-heading font-medium text-sm transition-all hover:scale-105 hover:text-purpleLight group">
+                        Посмотреть интерфейс <i class="fas fa-desktop text-xs transform group-hover:scale-110 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-santa order-1 lg:order-2 mx-auto lg:mx-0">
+                <div class="hero-santa__img-wrap">
+                    <img src="sources/moroz.png" alt="Дед Мороз" class="hero-santa__img" loading="eager" width="640" height="auto">
+                </div>
             </div>
         </div>
-
     </div>
 </section>
 <!-- ==================== HOW IT WORKS ==================== -->
