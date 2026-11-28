@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лицензия и вход — Nexis AI</title>
+    <meta name="theme-color" content="#09090b">
+    <link rel="icon" href="../icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="bg-base">
+
+<header id="header" class="py-4">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex justify-between items-center">
+        <a href="../index.html" class="flex items-center gap-2.5">
+            <img src="../icon.png" alt="Nexis AI" class="w-8 h-8 object-contain">
+            <span class="font-semibold text-[15px] tracking-tight text-white">Nexis<span class="text-accent">.</span>AI</span>
+        </a>
+        <nav class="hidden lg:flex items-center gap-7">
+            <a href="../index.html" class="nav-tab">Главная</a>
+            <a href="../features.html" class="nav-tab">Возможности</a>
+            <a href="../news.html" class="nav-tab">Новости</a>
+            <a href="../prices.html" class="nav-tab">Цены</a>
+            <div class="dropdown">
+                <button class="nav-tab active flex items-center gap-1.5">Справка <i class="fas fa-chevron-down text-[10px] opacity-60"></i></button>
+                <div class="dropdown-menu">
+                    <a href="api-keys.html" class="dropdown-item">API-ключи</a>
+                    <a href="commands.html" class="dropdown-item">Команды</a>
+                    <a href="plugins.html" class="dropdown-item">Плагины</a>
+                    <a href="voice.html" class="dropdown-item">Голос и микрофон</a>
+                    <a href="mobile.html" class="dropdown-item">Мобильное управление</a>
+                    <a href="install.html" class="dropdown-item">Установка</a>
+                    <a href="license.html" class="dropdown-item">Лицензия и вход</a>
+                </div>
+            </div>
+        </nav>
+        <div class="flex items-center gap-3">
+            <a href="https://t.me/norules_nexisaibot" target="_blank" rel="noopener" class="hidden sm:inline-flex btn-primary px-4 py-2 text-sm">Получить доступ</a>
+            <button id="navToggle" class="lg:hidden w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center text-zinc-400" aria-label="Меню"><i class="fas fa-bars"></i></button>
+        </div>
+    </div>
+</header>
+
+<div id="mobileMenu">
+    <div class="flex justify-between items-center mb-8">
+        <span class="text-sm font-medium text-zinc-400 uppercase">Меню</span>
+        <button id="closeMenuBtn" class="w-9 h-9 rounded-lg border border-white/10 flex items-center justify-center text-zinc-400"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="flex-1 space-y-1">
+        <a href="../index.html" class="mobile-link"><i class="fas fa-home w-5 opacity-60"></i> Главная</a>
+        <a href="../features.html" class="mobile-link"><i class="fas fa-desktop w-5 opacity-60"></i> Возможности</a>
+        <a href="../news.html" class="mobile-link"><i class="fas fa-newspaper w-5 opacity-60"></i> Новости</a>
+        <a href="../prices.html" class="mobile-link"><i class="fas fa-tags w-5 opacity-60"></i> Цены</a>
+        <div class="pt-3">
+            <div class="px-4 text-xs font-medium text-zinc-500 uppercase mb-2">Справка</div>
+            <a href="api-keys.html" class="mobile-link mobile-sub">API-ключи</a>
+            <a href="commands.html" class="mobile-link mobile-sub">Команды</a>
+            <a href="plugins.html" class="mobile-link mobile-sub">Плагины</a>
+            <a href="voice.html" class="mobile-link mobile-sub">Голос и микрофон</a>
+            <a href="mobile.html" class="mobile-link mobile-sub">Мобильное управление</a>
+            <a href="install.html" class="mobile-link mobile-sub">Установка</a>
+            <a href="license.html" class="mobile-link mobile-sub">Лицензия и вход</a>
+        </div>
+    </nav>
+</div>
+
+<main class="page-content">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-10">
+        <div class="prose">
+            <p class="text-accent text-xs font-medium uppercase tracking-wider mb-2">Справка</p>
+            <h1>Лицензия и вход</h1>
+            <p class="doc-meta">Покупка ключа, авторизация и привязка устройства.</p>
+
+            <h2>Как получить доступ</h2>
+            <ol>
+                <li>В Telegram-боте <a href="https://t.me/norules_nexisaibot" target="_blank" rel="noopener">@norules_nexisaibot</a> выберите тариф и оплатите.</li>
+                <li>После подтверждения оплаты бот выдаёт одноразовый ключ вида <code>VA-…</code>.</li>
+                <li>В приложении введите ключ — происходит обмен на токены через Supabase Edge Function.</li>
+            </ol>
+
+            <h2>Привязка к устройству</h2>
+            <p>Ключ привязывается к идентификатору устройства. Смена ПК требует ручной развязки (обратитесь в поддержку). Это защищает от массового распространения одного ключа.</p>
+
+            <h2>Проверка подписки</h2>
+            <p>При каждом восстановлении сессии клиент:</p>
+            <ul>
+                <li>обновляет токен;</li>
+                <li>сверяет привязку устройства;</li>
+                <li>проверяет активность подписки на сервере (<code>expires_at</code>).</li>
+            </ul>
+            <p>Офлайн-grace (ограниченный период без сети) действует только если последняя онлайн-проверка подтвердила активную подписку. Смена системной даты на ПК не обходит серверную проверку.</p>
+
+            <h2>Хранение токенов</h2>
+            <p>Access / refresh токены сохраняются в системном хранилище учётных данных (Windows Credential Manager / аналог), а не в открытом виде в файлах конфигурации.</p>
+
+            <h2>Тарифы</h2>
+            <p>На всех тарифах одинаковый полный функционал. Отличается только срок: месяц, год или «навсегда» (разовая оплата). Актуальные цены — на странице <a href="../prices.html">Цены</a>.</p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-main">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand flex items-center gap-2.5">
+                    <img src="../icon.png" alt="" class="w-7 h-7 object-contain">
+                    <span class="font-semibold text-sm text-white">Nexis.AI</span>
+                </div>
+                <p class="footer-copy">© 2026 Nexis AI.<br>Все права защищены.</p>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Продукт</div>
+                <a href="../index.html">Главная</a>
+                <a href="../features.html">Возможности</a>
+                <a href="../news.html">Новости</a>
+                <a href="../prices.html">Цены</a>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Правовая информация</div>
+                <a href="../legal/offer.html">Публичная оферта</a>
+                <a href="../legal/terms.html">Пользовательское соглашение</a>
+                <a href="../legal/privacy.html">Политика конфиденциальности</a>
+                <a href="../legal/contacts.html">Реквизиты и контакты</a>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Ссылки на ресурсы</div>
+                <a href="https://discord.gg/VB4dBfmUE" target="_blank" rel="noopener">Discord</a>
+                <a href="https://t.me/NorulesHu" target="_blank" rel="noopener">Telegram</a>
+                <a href="https://t.me/excmd" target="_blank" rel="noopener">Поддержка</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="../common.js"></script>
+</body>
+</html>

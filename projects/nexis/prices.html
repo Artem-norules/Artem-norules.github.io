@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цены — Nexis AI</title>
+    <meta name="theme-color" content="#09090b">
+    <link rel="icon" href="icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .price-card {
+            background: #121214;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 1.75rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            min-height: 280px;
+            position: relative;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .price-card:hover {
+            border-color: rgba(99, 102, 241, 0.35);
+        }
+        .price-card.popular {
+            border-color: rgba(99, 102, 241, 0.55);
+            box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.2);
+        }
+        .price-badge {
+            position: absolute;
+            top: -11px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #6366f1;
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.2rem 0.75rem;
+            border-radius: 999px;
+            white-space: nowrap;
+        }
+        .discount-tag {
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.15rem 0.5rem;
+            border-radius: 999px;
+        }
+        .price-old {
+            text-decoration: line-through;
+            color: #71717a;
+            font-size: 0.9rem;
+        }
+        .price-current {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: -0.02em;
+        }
+        .price-period {
+            color: #71717a;
+            font-size: 0.8rem;
+            margin-top: 0.15rem;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.25rem 0 1.5rem;
+            flex: 1;
+        }
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            font-size: 0.875rem;
+            color: #a1a1aa;
+            margin-bottom: 0.55rem;
+            line-height: 1.4;
+        }
+        .feature-list li i {
+            color: #6366f1;
+            margin-top: 0.2rem;
+            font-size: 0.75rem;
+            flex-shrink: 0;
+        }
+        .btn-select {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: background 0.15s, border-color 0.15s;
+            text-decoration: none;
+        }
+        .btn-select-primary {
+            background: #6366f1;
+            color: #fff;
+            border: none;
+        }
+        .btn-select-primary:hover { background: #818cf8; }
+        .btn-select-secondary {
+            background: transparent;
+            color: #e4e4e7;
+            border: 1px solid rgba(255,255,255,0.12);
+        }
+        .btn-select-secondary:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            background: rgba(99, 102, 241, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-base">
+
+<header id="header" class="py-4">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-2.5">
+            <img src="icon.png" alt="Nexis AI" class="w-8 h-8 object-contain">
+            <span class="font-semibold text-[15px] tracking-tight text-white">Nexis<span class="text-accent">.</span>AI</span>
+        </a>
+        <nav class="hidden lg:flex items-center gap-7">
+            <a href="index.html" class="nav-tab">Главная</a>
+            <a href="features.html" class="nav-tab">Возможности</a>
+            <a href="news.html" class="nav-tab">Новости</a>
+            <a href="prices.html" class="nav-tab active">Цены</a>
+            <div class="dropdown">
+                <button class="nav-tab flex items-center gap-1.5">Справка <i class="fas fa-chevron-down text-[10px] opacity-60"></i></button>
+                <div class="dropdown-menu">
+                    <a href="help/api-keys.html" class="dropdown-item">API-ключи</a>
+                    <a href="help/commands.html" class="dropdown-item">Команды</a>
+                    <a href="help/plugins.html" class="dropdown-item">Плагины</a>
+                    <a href="help/voice.html" class="dropdown-item">Голос и микрофон</a>
+                    <a href="help/mobile.html" class="dropdown-item">Мобильное управление</a>
+                    <a href="help/install.html" class="dropdown-item">Установка</a>
+                    <a href="help/license.html" class="dropdown-item">Лицензия и вход</a>
+                </div>
+            </div>
+        </nav>
+        <div class="flex items-center gap-3">
+            <a href="https://t.me/norules_nexisaibot" target="_blank" rel="noopener" class="hidden sm:inline-flex btn-primary px-4 py-2 text-sm">Получить доступ</a>
+            <button id="navToggle" class="lg:hidden w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center text-zinc-400" aria-label="Меню"><i class="fas fa-bars"></i></button>
+        </div>
+    </div>
+</header>
+
+<div id="mobileMenu">
+    <div class="flex justify-between items-center mb-8">
+        <span class="text-sm font-medium text-zinc-400 uppercase">Меню</span>
+        <button id="closeMenuBtn" class="w-9 h-9 rounded-lg border border-white/10 flex items-center justify-center text-zinc-400"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="flex-1 space-y-1">
+        <a href="index.html" class="mobile-link"><i class="fas fa-home w-5 opacity-60"></i> Главная</a>
+        <a href="features.html" class="mobile-link"><i class="fas fa-desktop w-5 opacity-60"></i> Возможности</a>
+        <a href="news.html" class="mobile-link"><i class="fas fa-newspaper w-5 opacity-60"></i> Новости</a>
+        <a href="prices.html" class="mobile-link"><i class="fas fa-tags w-5 opacity-60"></i> Цены</a>
+        <div class="pt-3">
+            <div class="px-4 text-xs font-medium text-zinc-500 uppercase mb-2">Справка</div>
+            <a href="help/api-keys.html" class="mobile-link mobile-sub">API-ключи</a>
+            <a href="help/commands.html" class="mobile-link mobile-sub">Команды</a>
+            <a href="help/plugins.html" class="mobile-link mobile-sub">Плагины</a>
+            <a href="help/voice.html" class="mobile-link mobile-sub">Голос и микрофон</a>
+            <a href="help/mobile.html" class="mobile-link mobile-sub">Мобильное управление</a>
+            <a href="help/install.html" class="mobile-link mobile-sub">Установка</a>
+            <a href="help/license.html" class="mobile-link mobile-sub">Лицензия и вход</a>
+        </div>
+    </nav>
+</div>
+
+<main class="page-content">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+            <p class="text-accent text-xs font-medium uppercase tracking-wider mb-3">Тарифы</p>
+            <h1 class="text-2xl sm:text-3xl font-semibold text-white mb-3">Выберите срок доступа</h1>
+            <p class="text-zinc-400 text-sm">
+                На всех тарифах одинаковый полный функционал. Отличается только длительность подписки.
+                Оформление и оплата — в Telegram-боте.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
+            <!-- 1 month -->
+            <div class="price-card">
+                <div class="flex items-start justify-between mb-1">
+                    <div>
+                        <div class="text-[10px] uppercase tracking-wider text-zinc-500 font-medium">Starter Core</div>
+                        <div class="text-lg font-semibold text-white mt-0.5">Стартовый</div>
+                    </div>
+                    <span class="discount-tag">−25%</span>
+                </div>
+                <div class="mt-3">
+                    <span class="price-old">180 ₽</span>
+                    <div class="price-current">135 ₽</div>
+                    <div class="price-period">в месяц</div>
+                </div>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Доступ на 1 месяц</li>
+                </ul>
+<a href="https://t.me/norules_nexisaibot" target="_blank" rel="noopener" class="btn-select btn-select-secondary">Выбрать</a>
+            </div>
+
+            <!-- 3 months - popular -->
+            <div class="price-card popular">
+                <div class="price-badge">популярный</div>
+                <div class="flex items-start justify-between mb-1">
+                    <div>
+                        <div class="text-[10px] uppercase tracking-wider text-zinc-500 font-medium">Advanced Agent</div>
+                        <div class="text-lg font-semibold text-white mt-0.5">Продвинутый</div>
+                    </div>
+                    <span class="discount-tag">−25%</span>
+                </div>
+                <div class="mt-3">
+                    <span class="price-old">450 ₽</span>
+                    <div class="price-current">338 ₽</div>
+                    <div class="price-period">за 3 месяца</div>
+                </div>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Доступ на 3 месяца</li>
+                </ul>
+<a href="https://t.me/norules_nexisaibot" target="_blank" rel="noopener" class="btn-select btn-select-primary">Выбрать</a>
+            </div>
+
+            <!-- 1 year -->
+            <div class="price-card">
+                <div class="flex items-start justify-between mb-1">
+                    <div>
+                        <div class="text-[10px] uppercase tracking-wider text-zinc-500 font-medium">Yearly Pro</div>
+                        <div class="text-lg font-semibold text-white mt-0.5">Годовой</div>
+                    </div>
+                    <span class="discount-tag">−25%</span>
+                </div>
+                <div class="mt-3">
+                    <span class="price-old">1500 ₽</span>
+                    <div class="price-current">1125 ₽</div>
+                    <div class="price-period">на год</div>
+                </div>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Доступ на 12 месяцев</li>
+                </ul>
+<a href="https://t.me/norules_nexisaibot" target="_blank" rel="noopener" class="btn-select btn-select-secondary">Выбрать</a>
+            </div>
+
+            <!-- Forever -->
+            <div class="price-card">
+                <div class="flex items-start justify-between mb-1">
+                    <div>
+                        <div class="text-[10px] uppercase tracking-wider text-zinc-500 font-medium">Forever Access</div>
+                        <div class="text-lg font-semibold text-white mt-0.5">Навсегда</div>
+                    </div>
+                    <span class="discount-tag">−25%</span>
+                </div>
+                <div class="mt-3">
+                    <span class="price-old">1800 ₽</span>
+                    <div class="price-current">1350 ₽</div>
+                    <div class="price-period">разовая оплата</div>
+                </div>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Бессрочный доступ</li>
+                </ul>
+<a href="https://t.me/norules_nexisaibot" target="_blank" rel="noopener" class="btn-select btn-select-secondary">Выбрать</a>
+            </div>
+        </div>
+
+        <p class="text-center text-xs text-zinc-500 mt-10">
+            Актуальные цены и оплата — в <a href="https://t.me/norules_nexisaibot" target="_blank" rel="noopener" class="text-accent hover:underline">Telegram-боте</a>.
+            Сайт носит информационный характер.
+        </p>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-main">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand flex items-center gap-2.5">
+                    <img src="icon.png" alt="" class="w-7 h-7 object-contain">
+                    <span class="font-semibold text-sm text-white">Nexis.AI</span>
+                </div>
+                <p class="footer-copy">© 2026 Nexis AI.<br>Все права защищены.</p>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Продукт</div>
+                <a href="index.html">Главная</a>
+                <a href="features.html">Возможности</a>
+                <a href="news.html">Новости</a>
+                <a href="prices.html">Цены</a>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Правовая информация</div>
+                <a href="legal/offer.html">Публичная оферта</a>
+                <a href="legal/terms.html">Пользовательское соглашение</a>
+                <a href="legal/privacy.html">Политика конфиденциальности</a>
+                <a href="legal/contacts.html">Реквизиты и контакты</a>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Ссылки на ресурсы</div>
+                <a href="https://discord.gg/VB4dBfmUE" target="_blank" rel="noopener">Discord</a>
+                <a href="https://t.me/NorulesHu" target="_blank" rel="noopener">Telegram</a>
+                <a href="https://t.me/excmd" target="_blank" rel="noopener">Поддержка</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="common.js"></script>
+</body>
+</html>

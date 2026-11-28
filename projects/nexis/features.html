@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Возможности — Nexis AI</title>
+    <meta name="theme-color" content="#09090b">
+    <link rel="icon" href="icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-base">
+
+<header id="header" class="py-4">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-2.5">
+            <img src="icon.png" alt="Nexis AI" class="w-8 h-8 object-contain">
+            <span class="font-semibold text-[15px] tracking-tight text-white">Nexis<span class="text-accent">.</span>AI</span>
+        </a>
+        <nav class="hidden lg:flex items-center gap-7">
+            <a href="index.html" class="nav-tab">Главная</a>
+            <a href="features.html" class="nav-tab active">Возможности</a>
+            <a href="news.html" class="nav-tab">Новости</a>
+            <a href="prices.html" class="nav-tab">Цены</a>
+            <div class="dropdown">
+                <button class="nav-tab flex items-center gap-1.5">Справка <i class="fas fa-chevron-down text-[10px] opacity-60"></i></button>
+                <div class="dropdown-menu">
+                    <a href="help/api-keys.html" class="dropdown-item">API-ключи</a>
+                    <a href="help/commands.html" class="dropdown-item">Команды</a>
+                    <a href="help/plugins.html" class="dropdown-item">Плагины</a>
+                    <a href="help/voice.html" class="dropdown-item">Голос и микрофон</a>
+                    <a href="help/mobile.html" class="dropdown-item">Мобильное управление</a>
+                    <a href="help/install.html" class="dropdown-item">Установка</a>
+                    <a href="help/license.html" class="dropdown-item">Лицензия и вход</a>
+                </div>
+            </div>
+        </nav>
+        <div class="flex items-center gap-3">
+            <a href="https://t.me/norules_nexisaibot" target="_blank" rel="noopener" class="hidden sm:inline-flex btn-primary px-4 py-2 text-sm">Получить доступ</a>
+            <button id="navToggle" class="lg:hidden w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center text-zinc-400" aria-label="Меню"><i class="fas fa-bars"></i></button>
+        </div>
+    </div>
+</header>
+
+<div id="mobileMenu">
+    <div class="flex justify-between items-center mb-8">
+        <span class="text-sm font-medium text-zinc-400 uppercase">Меню</span>
+        <button id="closeMenuBtn" class="w-9 h-9 rounded-lg border border-white/10 flex items-center justify-center text-zinc-400"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="flex-1 space-y-1">
+        <a href="index.html" class="mobile-link"><i class="fas fa-home w-5 opacity-60"></i> Главная</a>
+        <a href="features.html" class="mobile-link"><i class="fas fa-desktop w-5 opacity-60"></i> Возможности</a>
+        <a href="news.html" class="mobile-link"><i class="fas fa-newspaper w-5 opacity-60"></i> Новости</a>
+        <a href="prices.html" class="mobile-link"><i class="fas fa-tags w-5 opacity-60"></i> Цены</a>
+        <div class="pt-3">
+            <div class="px-4 text-xs font-medium text-zinc-500 uppercase mb-2">Справка</div>
+            <a href="help/api-keys.html" class="mobile-link mobile-sub">API-ключи</a>
+            <a href="help/commands.html" class="mobile-link mobile-sub">Команды</a>
+            <a href="help/plugins.html" class="mobile-link mobile-sub">Плагины</a>
+            <a href="help/voice.html" class="mobile-link mobile-sub">Голос и микрофон</a>
+            <a href="help/mobile.html" class="mobile-link mobile-sub">Мобильное управление</a>
+            <a href="help/install.html" class="mobile-link mobile-sub">Установка</a>
+            <a href="help/license.html" class="mobile-link mobile-sub">Лицензия и вход</a>
+        </div>
+    </nav>
+</div>
+
+<main class="page-content">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+            <p class="text-accent text-xs font-medium uppercase tracking-wider mb-3">Возможности</p>
+            <h1 class="text-2xl sm:text-3xl font-semibold text-white mb-3">Всё, что умеет Nexis AI</h1>
+            <p class="text-zinc-400 text-sm">
+                Голосовой ассистент для Windows с чатом, сценариями, плагинами и удалённым управлением.
+                Полный функционал доступен на любом тарифе.
+            </p>
+        </div>
+
+        <!-- Core capabilities -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
+            <div class="card p-6 reveal">
+                <div class="w-10 h-10 rounded-lg bg-accent-muted flex items-center justify-center text-accent mb-4"><i class="fas fa-microphone"></i></div>
+                <h3 class="font-medium text-white mb-2">Голосовой режим</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">Распознавание речи (Whisper и классический STT), синтез голоса, wake-words («Ксюша», «ассистент»), barge-in (перебивание), подтверждение действий и latency-фразы для естественного диалога.</p>
+            </div>
+            <div class="card p-6 reveal">
+                <div class="w-10 h-10 rounded-lg bg-accent-muted flex items-center justify-center text-accent mb-4"><i class="fas fa-comments"></i></div>
+                <h3 class="font-medium text-white mb-2">Текстовый чат</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">Полноценный чат с историей, Markdown, блоками кода и таблицами. Контекст сохраняется между сообщениями. Поддержка длинных диалогов и профилей ИИ.</p>
+            </div>
+            <div class="card p-6 reveal">
+                <div class="w-10 h-10 rounded-lg bg-accent-muted flex items-center justify-center text-accent mb-4"><i class="fas fa-brain"></i></div>
+                <h3 class="font-medium text-white mb-2">Несколько ИИ-провайдеров</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">Gemini (Google GenAI), OpenAI-совместимые API (Groq, OpenAI и др.) и локальный Ollama. Свои API-ключи, tool-calling и гибкие системные инструкции.</p>
+            </div>
+            <div class="card p-6 reveal">
+                <div class="w-10 h-10 rounded-lg bg-accent-muted flex items-center justify-center text-accent mb-4"><i class="fas fa-project-diagram"></i></div>
+                <h3 class="font-medium text-white mb-2">Сценарии команд</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">Визуальный редактор цепочек действий: запуск приложений, файловые операции, системные команды, горячие клавиши. Фразы-триггеры и переменные.</p>
+            </div>
+            <div class="card p-6 reveal">
+                <div class="w-10 h-10 rounded-lg bg-accent-muted flex items-center justify-center text-accent mb-4"><i class="fas fa-puzzle-piece"></i></div>
+                <h3 class="font-medium text-white mb-2">Плагины</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">Динамическая загрузка без перезапуска: медиаплеер, Telegram userbot, веб-поиск, управление клавиатурой, Steam, виджеты системы и свои модули через SDK.</p>
+            </div>
+            <div class="card p-6 reveal">
+                <div class="w-10 h-10 rounded-lg bg-accent-muted flex items-center justify-center text-accent mb-4"><i class="fas fa-mobile-alt"></i></div>
+                <h3 class="font-medium text-white mb-2">Мобильное управление</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">Локальный веб-сервер + ngrok: управляйте ПК с телефона по PIN. Удалённые команды, статус и быстрые действия без установки клиента на телефон.</p>
+            </div>
+            <div class="card p-6 reveal">
+                <div class="w-10 h-10 rounded-lg bg-accent-muted flex items-center justify-center text-accent mb-4"><i class="fas fa-desktop"></i></div>
+                <h3 class="font-medium text-white mb-2">Управление системой</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">Файлы, приложения, громкость, буфер обмена, скриншоты, информация о ПК, сеть, погода, время. Всё доступно ИИ через единый SystemAPI.</p>
+            </div>
+            <div class="card p-6 reveal">
+                <div class="w-10 h-10 rounded-lg bg-accent-muted flex items-center justify-center text-accent mb-4"><i class="fas fa-shield-alt"></i></div>
+                <h3 class="font-medium text-white mb-2">Лицензия и безопасность</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">Авторизация через Supabase и Telegram-бот. Ключ привязывается к устройству. Токены хранятся в системном хранилище (Keychain / Credential Manager).</p>
+            </div>
+            <div class="card p-6 reveal">
+                <div class="w-10 h-10 rounded-lg bg-accent-muted flex items-center justify-center text-accent mb-4"><i class="fas fa-language"></i></div>
+                <h3 class="font-medium text-white mb-2">Локализация</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">Интерфейс на русском и английском. Голосовые ответы и системные инструкции настраиваются под ваш стиль общения.</p>
+            </div>
+        </div>
+
+        <!-- Protocols -->
+        <div class="mb-16">
+            <h2 class="text-xl font-semibold text-white mb-2 text-center">Протоколы диалога</h2>
+            <p class="text-zinc-400 text-sm text-center max-w-xl mx-auto mb-8">Сделаны так, чтобы разговор был естественным, а не «роботом с кнопками».</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div class="card p-6 reveal">
+                    <h3 class="font-medium text-white mb-2"><i class="fas fa-hand text-accent mr-2"></i>Barge-in</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Как только вы начинаете говорить — воспроизведение ответа останавливается. Контекст сохраняется, ассистент не повторяет уже сказанное.</p>
+                </div>
+                <div class="card p-6 reveal">
+                    <h3 class="font-medium text-white mb-2"><i class="fas fa-check-double text-accent mr-2"></i>Подтверждение действий</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Необратимые или важные операции (файлы, системные команды) требуют явного подтверждения, чтобы исключить случайные ошибки.</p>
+                </div>
+                <div class="card p-6 reveal">
+                    <h3 class="font-medium text-white mb-2"><i class="fas fa-clock text-accent mr-2"></i>Latency acknowledgement</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">При задержке больше ~750 мс ассистент произносит короткие фразы («Секунду…», «Сейчас проверю…»), чтобы не создавалось ощущение зависания.</p>
+                </div>
+                <div class="card p-6 reveal">
+                    <h3 class="font-medium text-white mb-2"><i class="fas fa-exchange-alt text-accent mr-2"></i>Turn-taking</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Семантическое определение конца реплики, а не просто таймер тишины. Ассистент не перебивает длинные фразы и ждёт явной передачи хода.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-main">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand flex items-center gap-2.5">
+                    <img src="icon.png" alt="" class="w-7 h-7 object-contain">
+                    <span class="font-semibold text-sm text-white">Nexis.AI</span>
+                </div>
+                <p class="footer-copy">© 2026 Nexis AI.<br>Все права защищены.</p>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Продукт</div>
+                <a href="index.html">Главная</a>
+                <a href="features.html">Возможности</a>
+                <a href="news.html">Новости</a>
+                <a href="prices.html">Цены</a>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Правовая информация</div>
+                <a href="legal/offer.html">Публичная оферта</a>
+                <a href="legal/terms.html">Пользовательское соглашение</a>
+                <a href="legal/privacy.html">Политика конфиденциальности</a>
+                <a href="legal/contacts.html">Реквизиты и контакты</a>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Ссылки на ресурсы</div>
+                <a href="https://discord.gg/VB4dBfmUE" target="_blank" rel="noopener">Discord</a>
+                <a href="https://t.me/NorulesHu" target="_blank" rel="noopener">Telegram</a>
+                <a href="https://t.me/excmd" target="_blank" rel="noopener">Поддержка</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="common.js"></script>
+</body>
+</html>

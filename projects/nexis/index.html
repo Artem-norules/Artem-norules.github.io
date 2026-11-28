@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexis AI — Голосовой ассистент нового поколения</title>
+    <meta name="description" content="Nexis AI — голосовой ассистент для Windows: речь, чат, сценарии команд, плагины и управление ПК с телефона.">
+    <meta name="theme-color" content="#09090b">
+    <link rel="icon" href="icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .screen-label { font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; color: #6366f1; font-weight: 600; }
+    </style>
+</head>
+<body class="bg-base">
+
+<header id="header" class="py-4">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-2.5">
+            <img src="icon.png" alt="Nexis AI" class="w-8 h-8 object-contain">
+            <span class="font-semibold text-[15px] tracking-tight text-white">Nexis<span class="text-accent">.</span>AI</span>
+        </a>
+        <nav class="hidden lg:flex items-center gap-7">
+            <a href="index.html" class="nav-tab active">Главная</a>
+            <a href="features.html" class="nav-tab">Возможности</a>
+            <a href="news.html" class="nav-tab">Новости</a>
+            <a href="prices.html" class="nav-tab">Цены</a>
+            <div class="dropdown">
+                <button class="nav-tab flex items-center gap-1.5">Справка <i class="fas fa-chevron-down text-[10px] opacity-60"></i></button>
+                <div class="dropdown-menu">
+                    <a href="help/api-keys.html" class="dropdown-item">API-ключи</a>
+                    <a href="help/commands.html" class="dropdown-item">Команды</a>
+                    <a href="help/plugins.html" class="dropdown-item">Плагины</a>
+                    <a href="help/voice.html" class="dropdown-item">Голос и микрофон</a>
+                    <a href="help/mobile.html" class="dropdown-item">Мобильное управление</a>
+                    <a href="help/install.html" class="dropdown-item">Установка</a>
+                    <a href="help/license.html" class="dropdown-item">Лицензия и вход</a>
+                </div>
+            </div>
+        </nav>
+        <div class="flex items-center gap-3">
+            <a href="https://t.me/norules_nexisaibot" target="_blank" rel="noopener" class="hidden sm:inline-flex btn-primary px-4 py-2 text-sm">Получить доступ</a>
+            <button id="navToggle" class="lg:hidden w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center text-zinc-400" aria-label="Меню"><i class="fas fa-bars"></i></button>
+        </div>
+    </div>
+</header>
+
+<div id="mobileMenu">
+    <div class="flex justify-between items-center mb-8">
+        <span class="text-sm font-medium text-zinc-400 uppercase">Меню</span>
+        <button id="closeMenuBtn" class="w-9 h-9 rounded-lg border border-white/10 flex items-center justify-center text-zinc-400"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="flex-1 space-y-1">
+        <a href="index.html" class="mobile-link"><i class="fas fa-home w-5 opacity-60"></i> Главная</a>
+        <a href="features.html" class="mobile-link"><i class="fas fa-desktop w-5 opacity-60"></i> Возможности</a>
+        <a href="news.html" class="mobile-link"><i class="fas fa-newspaper w-5 opacity-60"></i> Новости</a>
+        <a href="prices.html" class="mobile-link"><i class="fas fa-tags w-5 opacity-60"></i> Цены</a>
+        <div class="pt-3">
+            <div class="px-4 text-xs font-medium text-zinc-500 uppercase mb-2">Справка</div>
+            <a href="help/api-keys.html" class="mobile-link mobile-sub">API-ключи</a>
+            <a href="help/commands.html" class="mobile-link mobile-sub">Команды</a>
+            <a href="help/plugins.html" class="mobile-link mobile-sub">Плагины</a>
+            <a href="help/voice.html" class="mobile-link mobile-sub">Голос и микрофон</a>
+            <a href="help/mobile.html" class="mobile-link mobile-sub">Мобильное управление</a>
+            <a href="help/install.html" class="mobile-link mobile-sub">Установка</a>
+            <a href="help/license.html" class="mobile-link mobile-sub">Лицензия и вход</a>
+        </div>
+    </nav>
+    <div class="pt-6 border-t border-white/5">
+        <a href="https://t.me/norules_nexisaibot" target="_blank" rel="noopener" class="w-full btn-primary px-4 py-3 text-sm">Получить доступ</a>
+    </div>
+</div>
+
+<main class="page-content">
+    <!-- HERO -->
+    <section id="home" class="hero-stage">
+        <div class="hero-grid">
+            <div class="hero-copy">
+                <h1 class="hero-title">
+                    Голосовой ассистент,<br>который действительно помогает
+                </h1>
+                <p class="hero-lead">
+                    Десктопный ассистент для Windows: говорите голосом, пишите в чате, собирайте сценарии команд и расширяйте возможности плагинами. При необходимости управляйте компьютером с телефона.
+                </p>
+                <div class="hero-actions">
+                    <a href="https://t.me/norules_nexisaibot" target="_blank" rel="noopener" class="btn-primary px-6 py-3 text-sm">
+                        Начать работу <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                    <a href="#screenshots" class="btn-secondary px-6 py-3 text-sm">Посмотреть интерфейс</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-video-frame">
+                    <video
+                        src="sources/media/hero-video.mp4"
+                        autoplay muted loop playsinline
+                        preload="metadata"
+                        poster="sources/media/hero-left.png"
+                        width="1280" height="720"></video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how" class="py-20 border-t border-white/5">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+                <p class="text-accent text-xs font-medium uppercase tracking-wider mb-3">Как это работает</p>
+                <h2 class="text-2xl sm:text-3xl font-semibold text-white mb-3">Начать просто</h2>
+                <p class="text-zinc-400 text-sm">Оформите доступ, установите приложение на Windows и настройте ассистента под себя.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <div class="card p-6 reveal">
+                    <div class="w-9 h-9 rounded-lg bg-accent-muted flex items-center justify-center text-accent text-sm font-semibold mb-4">01</div>
+                    <h3 class="font-medium text-white mb-2">Доступ</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Выберите тариф в Telegram-боте <a href="https://t.me/norules_nexisaibot" class="text-accent hover:underline" target="_blank" rel="noopener">@norules_nexisaibot</a> и получите доступ к приложению.</p>
+                </div>
+                <div class="card p-6 reveal">
+                    <div class="w-9 h-9 rounded-lg bg-accent-muted flex items-center justify-center text-accent text-sm font-semibold mb-4">02</div>
+                    <h3 class="font-medium text-white mb-2">Установка и настройка</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Установите Nexis AI на Windows. Подключите нейросеть, настройте голос, распознавание речи и нужные плагины.</p>
+                </div>
+                <div class="card p-6 reveal">
+                    <div class="w-9 h-9 rounded-lg bg-accent-muted flex items-center justify-center text-accent text-sm font-semibold mb-4">03</div>
+                    <h3 class="font-medium text-white mb-2">Работа</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Говорите, пишите в чат, запускайте сценарии и управляйте компьютером — в том числе с телефона.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCREENSHOTS (detailed like original) -->
+    <section id="screenshots" class="py-20 border-t border-white/5">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                <p class="text-accent text-xs font-medium uppercase tracking-wider mb-3">Интерфейс</p>
+                <h2 class="text-2xl sm:text-3xl font-semibold text-white mb-3">Интерфейс без лишнего</h2>
+                <p class="text-zinc-400 text-sm">Основные действия и настройки собраны в понятных разделах. Вот как выглядит приложение.</p>
+            </div>
+
+            <div class="space-y-20">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center reveal">
+                    <div class="card overflow-hidden">
+                        <img src="sources/media/1.png" alt="Главная страница" class="w-full h-auto" loading="lazy">
+                    </div>
+                    <div class="space-y-3">
+                        <div class="screen-label">01 · Главная страница</div>
+                        <h3 class="text-xl font-semibold text-white">Главный экран ассистента</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed">Стартовая панель приложения: микрофон, переход в чат и разделы настроек. Статус сети и ИИ — в шапке окна.</p>
+                        <ul class="space-y-2 text-sm text-zinc-400">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span> Включение микрофона и голосового режима</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span> Быстрый переход в чат</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span> Навигация по разделам приложения</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center reveal">
+                    <div class="lg:order-2 card overflow-hidden">
+                        <img src="sources/media/2.png" alt="Сценарии команд" class="w-full h-auto" loading="lazy">
+                    </div>
+                    <div class="lg:order-1 space-y-3">
+                        <div class="screen-label">02 · Сценарии команд</div>
+                        <h3 class="text-xl font-semibold text-white">Визуальный редактор команд</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed">Собирайте цепочки действий на холсте: фразы-триггеры, условия, циклы и связи между блоками. Запускайте сценарии голосом или вручную.</p>
+                        <ul class="space-y-2 text-sm text-zinc-400">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span> Блоки и связи без кода</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span> Фразовые триггеры и горячие клавиши</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span> Импорт и экспорт сценариев</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center reveal">
+                    <div class="card overflow-hidden">
+                        <img src="sources/media/3.png" alt="Чат и плагины" class="w-full h-auto" loading="lazy">
+                    </div>
+                    <div class="space-y-3">
+                        <div class="screen-label">03 · Чат и плагины</div>
+                        <h3 class="text-xl font-semibold text-white">Диалог и расширения</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed">Полноценный чат с историей, поддержкой контекста и возможностью подключать плагины для расширения функций ассистента.</p>
+                        <ul class="space-y-2 text-sm text-zinc-400">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span> История диалогов</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span> Подключаемые плагины</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span> Гибкая настройка поведения</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center reveal">
+                    <div class="lg:order-2 card overflow-hidden">
+                        <img src="sources/media/4.png" alt="Мобильное управление" class="w-full h-auto" loading="lazy">
+                    </div>
+                    <div class="lg:order-1 space-y-3">
+                        <div class="screen-label">04 · Мобильное управление</div>
+                        <h3 class="text-xl font-semibold text-white">Управление с телефона</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed">Подключайтесь к ассистенту с мобильного устройства и управляйте компьютером удалённо: голос, команды, сценарии.</p>
+                        <ul class="space-y-2 text-sm text-zinc-400">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span> Удалённый доступ</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span> Голосовые команды с телефона</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span> Синхронизация состояния</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="py-20 border-t border-white/5">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+                <p class="text-accent text-xs font-medium uppercase tracking-wider mb-3">Функции</p>
+                <h2 class="text-2xl sm:text-3xl font-semibold text-white mb-3">Всё необходимое в одном месте</h2>
+                <p class="text-zinc-400 text-sm">Голос, чат, сценарии, плагины и удалённое управление.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                <div class="card p-6 reveal">
+                    <div class="w-10 h-10 rounded-lg bg-accent-muted flex items-center justify-center text-accent mb-4"><i class="fas fa-microphone"></i></div>
+                    <h3 class="font-medium text-white mb-2">Голосовое управление</h3>
+                    <p class="text-zinc-400 text-sm">Распознавание речи, синтез голоса и непрерывный диалог без лишних кликов.</p>
+                </div>
+                <div class="card p-6 reveal">
+                    <div class="w-10 h-10 rounded-lg bg-accent-muted flex items-center justify-center text-accent mb-4"><i class="fas fa-comments"></i></div>
+                    <h3 class="font-medium text-white mb-2">Чат с контекстом</h3>
+                    <p class="text-zinc-400 text-sm">Полноценный текстовый чат с историей и поддержкой длинных диалогов.</p>
+                </div>
+                <div class="card p-6 reveal">
+                    <div class="w-10 h-10 rounded-lg bg-accent-muted flex items-center justify-center text-accent mb-4"><i class="fas fa-project-diagram"></i></div>
+                    <h3 class="font-medium text-white mb-2">Сценарии команд</h3>
+                    <p class="text-zinc-400 text-sm">Визуальный редактор для создания цепочек действий и автоматизаций.</p>
+                </div>
+                <div class="card p-6 reveal">
+                    <div class="w-10 h-10 rounded-lg bg-accent-muted flex items-center justify-center text-accent mb-4"><i class="fas fa-puzzle-piece"></i></div>
+                    <h3 class="font-medium text-white mb-2">Плагины</h3>
+                    <p class="text-zinc-400 text-sm">Расширяйте возможности ассистента сторонними модулями и своими скриптами.</p>
+                </div>
+                <div class="card p-6 reveal">
+                    <div class="w-10 h-10 rounded-lg bg-accent-muted flex items-center justify-center text-accent mb-4"><i class="fas fa-mobile-alt"></i></div>
+                    <h3 class="font-medium text-white mb-2">Мобильный доступ</h3>
+                    <p class="text-zinc-400 text-sm">Управляйте компьютером с телефона через защищённое соединение.</p>
+                </div>
+                <div class="card p-6 reveal">
+                    <div class="w-10 h-10 rounded-lg bg-accent-muted flex items-center justify-center text-accent mb-4"><i class="fas fa-key"></i></div>
+                    <h3 class="font-medium text-white mb-2">API и ключи</h3>
+                    <p class="text-zinc-400 text-sm">Подключайте собственные модели и сервисы через API-ключи.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING TEASER -->
+    <section id="pricing" class="py-20 border-t border-white/5">
+        <div class="max-w-3xl mx-auto px-4 text-center reveal">
+            <p class="text-accent text-xs font-medium uppercase tracking-wider mb-3">Тарифы</p>
+            <h2 class="text-2xl sm:text-3xl font-semibold text-white mb-3">Прозрачные цены</h2>
+            <p class="text-zinc-400 text-sm mb-8">Один полный доступ на всех тарифах. Отличается только срок: месяц, 3 месяца, год или навсегда. Оформление — в Telegram-боте.</p>
+            <a href="prices.html" class="btn-primary px-8 py-3 text-sm">Смотреть тарифы</a>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-20 border-t border-white/5">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 reveal">
+                <p class="text-accent text-xs font-medium uppercase tracking-wider mb-3">FAQ</p>
+                <h2 class="text-2xl sm:text-3xl font-semibold text-white">Частые вопросы</h2>
+            </div>
+            <div class="space-y-3">
+                <div class="faq__item card overflow-hidden">
+                    <button type="button" class="faq__question w-full flex items-center justify-between p-5 text-left text-sm font-medium text-white hover:bg-white/[0.02] transition-colors">
+                        <span>На каких системах работает Nexis AI?</span>
+                        <i class="fas fa-chevron-down text-xs text-zinc-500 transition-transform"></i>
+                    </button>
+                    <div class="faq__answer"><div class="faq__answer-inner px-5 pb-5 text-sm text-zinc-400 leading-relaxed">
+                        Сейчас поддерживается Windows. Это десктопное приложение, а не веб-сервис.
+                    </div></div>
+                </div>
+                <div class="faq__item card overflow-hidden">
+                    <button type="button" class="faq__question w-full flex items-center justify-between p-5 text-left text-sm font-medium text-white hover:bg-white/[0.02] transition-colors">
+                        <span>Как оформить доступ?</span>
+                        <i class="fas fa-chevron-down text-xs text-zinc-500 transition-transform"></i>
+                    </button>
+                    <div class="faq__answer"><div class="faq__answer-inner px-5 pb-5 text-sm text-zinc-400 leading-relaxed">
+                        Через Telegram-бота <a href="https://t.me/norules_nexisaibot" target="_blank" rel="noopener" class="text-accent hover:underline">@norules_nexisaibot</a> — выберите тариф и следуйте инструкциям в боте.
+                    </div></div>
+                </div>
+                <div class="faq__item card overflow-hidden">
+                    <button type="button" class="faq__question w-full flex items-center justify-between p-5 text-left text-sm font-medium text-white hover:bg-white/[0.02] transition-colors">
+                        <span>Что умеет ассистент?</span>
+                        <i class="fas fa-chevron-down text-xs text-zinc-500 transition-transform"></i>
+                    </button>
+                    <div class="faq__answer"><div class="faq__answer-inner px-5 pb-5 text-sm text-zinc-400 leading-relaxed">
+                        Голосовой диалог, текстовый чат с инструментами, визуальные сценарии команд, плагины и управление компьютером с телефона.
+                    </div></div>
+                </div>
+                <div class="faq__item card overflow-hidden">
+                    <button type="button" class="faq__question w-full flex items-center justify-between p-5 text-left text-sm font-medium text-white hover:bg-white/[0.02] transition-colors">
+                        <span>Чем отличаются тарифы?</span>
+                        <i class="fas fa-chevron-down text-xs text-zinc-500 transition-transform"></i>
+                    </button>
+                    <div class="faq__answer"><div class="faq__answer-inner px-5 pb-5 text-sm text-zinc-400 leading-relaxed">
+                        Функционал одинаковый на всех тарифах. Отличается только срок действия доступа: 1 месяц, 3 месяца, 1 год или навсегда.
+                    </div></div>
+                </div>
+                <div class="faq__item card overflow-hidden">
+                    <button type="button" class="faq__question w-full flex items-center justify-between p-5 text-left text-sm font-medium text-white hover:bg-white/[0.02] transition-colors">
+                        <span>Нужен ли всегда интернет?</span>
+                        <i class="fas fa-chevron-down text-xs text-zinc-500 transition-transform"></i>
+                    </button>
+                    <div class="faq__answer"><div class="faq__answer-inner px-5 pb-5 text-sm text-zinc-400 leading-relaxed">
+                        Для ответов нейросети обычно нужен доступ к выбранному ИИ-провайдеру. Часть функций распознавания речи может работать локально, в зависимости от настроек.
+                    </div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- SINGLE FOOTER -->
+<footer>
+    <div class="footer-main">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand flex items-center gap-2.5">
+                    <img src="icon.png" alt="" class="w-7 h-7 object-contain">
+                    <span class="font-semibold text-sm text-white">Nexis.AI</span>
+                </div>
+                <p class="footer-copy">© 2026 Nexis AI.<br>Все права защищены.</p>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Продукт</div>
+                <a href="index.html">Главная</a>
+                <a href="features.html">Возможности</a>
+                <a href="news.html">Новости</a>
+                <a href="prices.html">Цены</a>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Правовая информация</div>
+                <a href="legal/offer.html">Публичная оферта</a>
+                <a href="legal/terms.html">Пользовательское соглашение</a>
+                <a href="legal/privacy.html">Политика конфиденциальности</a>
+                <a href="legal/contacts.html">Реквизиты и контакты</a>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Ссылки на ресурсы</div>
+                <a href="https://discord.gg/VB4dBfmUE" target="_blank" rel="noopener">Discord</a>
+                <a href="https://t.me/NorulesHu" target="_blank" rel="noopener">Telegram</a>
+                <a href="https://t.me/excmd" target="_blank" rel="noopener">Поддержка</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="common.js"></script>
+<script>
+document.querySelectorAll('.faq__question').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const item = btn.closest('.faq__item');
+        const wasOpen = item.classList.contains('is-open');
+        document.querySelectorAll('.faq__item').forEach(i => i.classList.remove('is-open'));
+        if (!wasOpen) item.classList.add('is-open');
+    });
+});
+</script>
+</body>
+</html>
